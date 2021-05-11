@@ -1,0 +1,36 @@
+{
+    "debugBreakpointsState": {
+        "breakpoints": [
+            {
+                "id": 0,
+                "path": "~/Box/Assmann_Lab/2_Researcher_Data/1_Current/Angel_Ferrero-Serrano/Spanish accessions/Spanish_drought_mns./Data and code for analysis and figures/Figure 6/Figure 6.R",
+                "line_number": 242,
+                "function_steps": "",
+                "function_name": "toplevel",
+                "state": 1,
+                "editor_state": 1,
+                "editor_line_number": 242,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 1,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            },
+            {
+                "id": 1,
+                "path": "~/Box/Assmann_Lab/2_Researcher_Data/1_Current/Angel_Ferrero-Serrano/Spanish accessions/Spanish_drought_mns./Data and code for analysis and figures/Figure 6/Figure 6.R",
+                "line_number": 254,
+                "function_steps": "",
+                "function_name": "toplevel",
+                "state": 1,
+                "editor_state": 1,
+                "editor_line_number": 254,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 1,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            }
+        ]
+    }
+}

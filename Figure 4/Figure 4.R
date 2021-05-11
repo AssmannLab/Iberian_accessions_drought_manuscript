@@ -1,0 +1,631 @@
+list.of.packages <- c("ggplot2", "viridis", "ggrepel","readr", "tidyverse","tidyr","cowplot","qvalue","dplyr","viridis","ggpubr","ggthemes", "Hmisc", "cowplot","magick","grid", "ggpmisc")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+library(readr)
+library(ggplot2)
+library(ggrepel)
+library(tidyverse)
+library(ggpubr)
+library(qvalue)
+library(Hmisc)
+library(cowplot)
+library(dplyr)
+library(ggpmisc)
+library(magick)
+library(grid)
+
+####Important: before running this script, please unzip all files within the /data folder, and the /data/GWAS subfolder
+
+df1=read_csv("data/phenotypes.csv")
+head(df1)
+
+####Plot1
+meanx <- mean(df1$LAPdSI_drought,na.rm = TRUE)
+print(meanx)
+meany <- mean(df1$LAP_SD_WW,na.rm = TRUE)
+print(meany)
+formula <- y ~ x
+p1<-df1 %>% 
+  mutate(quadrant = case_when(LAP_SD_WW > 1 & LAPdSI_drought > 0   ~ "Q1",
+                              LAP_SD_WW <= 1 & LAPdSI_drought > 0  ~ "Q2",
+                              LAP_SD_WW <= 1 & LAPdSI_drought <= 0 ~ "Q3",
+                              TRUE                                         ~ "Q4")) %>% 
+  ggplot(aes(x = LAP_SD_WW, y = LAPdSI_drought)) + 
+  geom_point(aes(color=quadrant),alpha = 0.7,  size=9) +  
+  geom_smooth(method = "lm", se = T, fill="black", colour="black", size=0.2, alpha = 0.1) +  stat_poly_eq(aes(label = paste(..eq.label.., ..rr.label..,  sep = "~~~")),
+                                                                                                          label.x.npc = "right", label.y.npc = "top",
+                                                                                                          formula = formula, parse = TRUE, size = 5, colour="black")+
+  scale_colour_manual(values = c("#47a569", "#6689c3", "#ce494a", "#e9af41"))+
+  geom_text_repel(aes(LAP_SD_WW, LAPdSI_drought, label = name),  size=4, force=0.1,segment.size = 0.5,arrow = arrow(length = unit(0.01, 'npc')),family = 'Arial',
+                  fontface = 'bold',colour = "#696969",
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines"),
+                  segment.color = 'grey50',max.overlaps = Inf) + 
+  geom_vline(xintercept = 1, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 0, color = "black", linetype = "dashed")+
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(plot.title = element_text(family = "Arial", color="#696969",face="bold",  size=35))  +  theme(panel.background = element_rect(fill = 'white')) +
+  ggtitle("Phenotypes")+
+  xlab("Leaf area potential (well-watered)") + 
+  ylab("Leaf area plasticity index")+
+  theme(axis.text = element_text(family = "Arial", color="black", size=16)) +
+  theme(axis.title = element_text(family = "Arial", color="black", face="bold", size=18)) +  
+  theme(legend.position="none") 
+p1
+png("panels/p1.png", width = 7, height = 7, units = 'in', res = 350)
+p1
+dev.off() 
+
+
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+
+
+
+####Create an annotation file compatible with the files we are creating.
+annotation = read_csv("data/annotation.csv")
+annotation <-annotation[!(annotation$INFO == "downstream_gene_variant"), ]
+nrow(annotation)
+head(annotation)
+annotation$gene <- gsub("(.*)..*", "\\1", annotation$gene)
+annotation$gene <-gsub("\\.","",annotation$gene)
+
+gene_description = read_csv("data/gene_description.csv")
+head(gene_description)
+annotation <- merge(annotation,gene_description,by= "gene")
+head(annotation)
+
+####Plot1
+df2a=read_csv("data/GWAS/LAP_SD_WW.csv")
+head(df2a)
+df2b=read_csv("data/GWAS/LAPdSI_drought.csv")
+head(df2b)
+df2 <- merge(df2a,df2b,by=c("chr", "pos"))
+df2 <- merge(df2,annotation,by=c("chr", "pos"))
+
+df2 <- df2 %>% 
+  rename(
+    Leaf_area_potential_score = score.x,
+    Leaf_area_potential_MAF = maf.x,
+    Leaf_area_potential_MAC = mac.x,
+        Leaf_area_plasticity_index_score = score.y,
+    Leaf_area_plasticity_index_MAF = maf.y,
+    Leaf_area_plasticity_index_MAC = mac.y,)
+df2$GVE.x <- NULL
+df2$GVE.y <- NULL
+head(df2)
+
+
+df2<-df2 %>% unite(label, symbol, pos, sep = " pos. ")
+df2 <- df2[order(df2$Leaf_area_potential_score) ,  ]
+head(df2)
+
+write.csv(df2, "Tables/GWAS_Leaf_area_potential_vs_plasticity.csv", row.names = TRUE)
+
+
+p2<-df2 %>% 
+  mutate(quadrant = case_when(Leaf_area_potential_score > 4 & Leaf_area_plasticity_index_score > 4   ~ "Q1",
+                              Leaf_area_potential_score <= 4 & Leaf_area_plasticity_index_score > 4  ~ "Q2",
+                              Leaf_area_potential_score <= 4 & Leaf_area_plasticity_index_score <= 4 ~ "Q3",
+                              TRUE                                         ~ "Q4")) %>% 
+  mutate(label = case_when(Leaf_area_potential_score >= 4 & Leaf_area_plasticity_index_score >= 4 ~  paste(label))) %>% 
+  ggplot(aes(x = Leaf_area_potential_score, y = Leaf_area_plasticity_index_score)) + 
+  geom_point(aes(color=quadrant),alpha = 0.5,  size=3) + 
+  geom_text_repel(aes(Leaf_area_potential_score, Leaf_area_plasticity_index_score, label = label),  size=2, force=0.1,segment.size = 0.5,arrow = arrow(length = unit(0.01, 'npc')),family = 'Arial',
+                  fontface = 'bold.italic',
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines"),
+                  segment.color = 'grey50',max.overlaps = Inf) + 
+  scale_colour_manual(values = c( "#47a569", "#6689c3", "#c5c5c5","#e9af41"))+
+  geom_vline(xintercept = 4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 4, color = "black", linetype = "dashed")+
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(axis.text = element_text(family = "Arial", color="black", size=16)) +
+  theme(axis.title = element_text(family = "Arial", color="black", face="bold", size=18)) +  
+  theme(plot.title = element_text(family = "Arial", color="#696969",face="bold",  size=35))  +  theme(panel.background = element_rect(fill = 'white')) +
+  theme(legend.position="none") +
+  scale_x_continuous(limits = c(0, 7), breaks = seq(0, 7, by = 2))+
+  scale_y_continuous(limits = c(0, 7), breaks = seq(0, 7, by = 2))+
+  ggtitle("GWAS")+
+  ylab(expression(bold(atop(paste("Leaf area plasticity index"), paste("Genome-wide" ~ association ~ (-log["10"] ~ bolditalic("P")))))))+ 
+  xlab(expression(bold(atop(paste("Leaf area potential (well-watered)"), paste("Genome-wide" ~ association ~ (-log["10"] ~ bolditalic("P")))))))
+p2
+png("panels/p2.png", width = 7, height = 7, units = 'in', res = 350)
+p2
+dev.off() 
+
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+###################################################################################################
+######Leaf area reaction norm
+###Open dataframe with phenotypes
+####Create an annotation file compatible with the files we are creating.
+annotation = read_csv("data/gene_description.csv")
+head(annotation)
+
+###Open dataframe with phenotypes
+phenotypes = read.csv("data/phenotypes.csv")
+head(phenotypes)
+
+
+##res<-rcorr(as.matrix(phenotypes))
+##AA<-signif(res$r, 2)
+##write.csv(AA, "/Users/angel_admin/Box/Assmann_Lab/2_Researcher_Data/1_Current/Angel_Ferrero-Serrano/Spanish accessions/Fig28_transcriptome_potentialvsstability/Iberian_PxExP_corr.csv")
+
+
+#####Run autocorrelation matrix Phenotype A
+head(phenotypes)
+phenotypesselected<- select(phenotypes, LAP_SD_WW)
+accession_id1<-phenotypes$accession_id
+selected <-cbind(accession_id1, phenotypesselected)
+head(selected)
+transposedfinal = read_csv("data/transposedfinal.csv")
+head(transposedfinal)
+colnames(transposedfinal)[colnames(transposedfinal)=="accession_id"] <- "accession_id1"
+final<-merge(selected, transposedfinal, by = "accession_id1", sort = TRUE)
+head(final)
+accession_idsorted<-final$accession_id1
+final$accession_id1 <- NULL
+res<-rcorr(as.matrix(final), type = c("pearson","spearman"))
+AA<-signif(res$r, 2)
+BB<-signif(res$P,2)
+outputA1 <-cbind(accession_idsorted,AA)
+outputA1 <- outputA1[-1, 1:2]
+outputA1 <- as.data.frame(outputA1)
+outputA1 <- outputA1 %>% 
+  rownames_to_column(var = "gene")
+outputA2 <-cbind(accession_idsorted,BB)
+outputA2 <- outputA2[-1, 1:2]
+outputA2 <- as.data.frame(outputA2)
+outputA2 <- outputA2 %>% 
+  rownames_to_column(var = "gene")
+outputA <- merge(outputA1,outputA2,by="gene")
+outputA <- outputA[order(-outputA$LAP_SD_WW.x) ,  ]
+head(outputA)
+outputA <- merge(outputA,annotation,by="gene")
+outputA <- outputA %>% 
+  rename(
+    Leaf_area_potential_WW_rs = LAP_SD_WW.x,
+    Leaf_area_potential_WW_P_val = LAP_SD_WW.y)
+outputA$accession_idsorted.x <- NULL
+outputA$accession_idsorted.y <- NULL
+outputA <- outputA[order(-outputA$Leaf_area_potential_WW_rs) ,  ]
+head(outputA, n=100)
+tail(outputA, n=50)
+head(outputA)
+write.csv(outputA, "Tables/TWAS_Leaf_area_potential_WW.csv", row.names = FALSE)
+
+
+
+#####Run autocorrelation matrix condition B
+head(phenotypes)
+phenotypesselected<- select(phenotypes, LAPdSI_drought)
+accession_id1<-phenotypes$accession_id
+selected <-cbind(accession_id1, phenotypesselected)
+head(selected)
+transposedfinal = read_csv("data/transposedfinal.csv")
+head(transposedfinal)
+colnames(transposedfinal)[colnames(transposedfinal)=="accession_id"] <- "accession_id1"
+final<-merge(selected, transposedfinal, by = "accession_id1", sort = TRUE)
+head(final)
+accession_idsorted<-final$accession_id1
+final$accession_id1 <- NULL
+res<-rcorr(as.matrix(final), type = c("pearson","spearman"))
+AA<-signif(res$r, 2)
+BB<-signif(res$P,2)
+outputB1 <-cbind(accession_idsorted,AA)
+outputB1 <- outputB1[-1, 1:2]
+outputB1 <- as.data.frame(outputB1)
+outputB1 <- outputB1 %>% 
+  rownames_to_column(var = "gene")
+outputB2 <-cbind(accession_idsorted,BB)
+outputB2 <- outputB2[-1, 1:2]
+outputB2 <- as.data.frame(outputB2)
+outputB2 <- outputB2 %>% 
+  rownames_to_column(var = "gene")
+outputB <- merge(outputB1,outputB2,by="gene")
+outputB <- outputB[order(-outputB$LAPdSI_drought.x) ,  ]
+head(outputB)
+outputB <- merge(outputB,annotation,by="gene")
+outputB <- outputB %>% 
+  rename(
+    Leaf_area_plasticity_index_rs = LAPdSI_drought.x,
+    Leaf_area_plasticity_index_P_val = LAPdSI_drought.y)
+outputB$accession_idsorted.x <- NULL
+outputB$accession_idsorted.y <- NULL
+outputB <- outputB[order(-outputB$Leaf_area_plasticity_index_rs) ,  ]
+head(outputB, n=100)
+tail(outputB, n=50)
+head(outputB)
+write.csv(outputB, "Tables/TWAS_Leaf_area_plasticity_index.csv", row.names = FALSE)
+
+#####Merge df3
+
+df3 <- merge(outputA,outputB,by="gene")
+nrow(df3)
+head(df3)
+df3[df3 == "NAN"] <- NA
+df3[complete.cases(df3),]
+
+df3$accession_idsorted.y <- NULL
+df3$annotation.x <- NULL
+df3$accession_idsorted.x <- NULL
+df3$Gene_id.x <- NULL
+df3$symbol.x <- NULL
+df3$annotation.x <- NULL
+
+head(df3)
+df3 <- df3 %>% 
+  rename(
+    symbol = symbol.y,
+    annotation = annotation.y)
+head(df3)
+
+
+p3<-df3 %>% 
+  mutate(quadrant = case_when(Leaf_area_potential_WW_rs <= -0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~ "Q1",
+                              Leaf_area_potential_WW_rs <= -0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~ "Q2",
+                              Leaf_area_potential_WW_rs >= 0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~ "Q3",
+                              Leaf_area_potential_WW_rs >= 0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~ "Q4",
+                              TRUE                                         ~ "Q5")) %>% 
+  mutate(label = case_when(Leaf_area_potential_WW_rs <= -0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~  paste(symbol),
+                           Leaf_area_potential_WW_rs <= -0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~  paste(symbol),
+                           Leaf_area_potential_WW_rs >= 0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~  paste(symbol),
+                           Leaf_area_potential_WW_rs >= 0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~  paste(symbol))) %>% 
+  
+  ggplot(aes(x = Leaf_area_potential_WW_rs, y = Leaf_area_plasticity_index_rs)) + 
+  geom_point(aes(color=quadrant),alpha = 0.8,  size=12, shape = "-") +  
+  
+  
+  scale_colour_manual(values = c("#6689c3","#e9af41", "#c5c5c5"))+
+  geom_text_repel(aes(Leaf_area_potential_WW_rs, Leaf_area_plasticity_index_rs, label = label),  size=2, force=0.4,segment.size = 0.5,arrow = arrow(length = unit(0.01, 'npc')),family = 'Arial',
+                  fontface = 'bold.italic',
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines"),
+                  segment.color = 'grey50',max.overlaps = Inf) + 
+  geom_vline(xintercept = 0.4, color = "black", linetype = "dashed")+
+  geom_vline(xintercept = -0.4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 0.4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = -0.4, color = "black", linetype = "dashed")+
+  
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(axis.text = element_text(family = "Arial", color="black", size=16)) +
+  theme(axis.title = element_text(family = "Arial", color="black", size=18)) +
+    theme(legend.position="none") + 
+  theme(plot.title = element_text(family = "Arial", color="#696969",face="bold",  size=35))  +  theme(panel.background = element_rect(fill = 'white')) +
+  ylab(expression(bold(atop("Leaf area plasticity index", paste("transcriptome-wide association ", (r[s]))))))+ 
+  xlab(expression(bold(atop("Leaf area potential (well-watered)", paste("transcriptome-wide association ", (r[s]))))))+ 
+  ggtitle("TWAS")+
+  scale_y_continuous(limits = c(-0.8, 0.8), breaks = seq(-0.8, 0.8, by = 0.4))
+p3
+png("panels/p3.png", width = 7, height = 7, units = 'in', res = 350)
+p3
+dev.off() 
+####################################################################################################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+
+df4=read_csv("data/phenotypes.csv")
+head(df4)
+
+
+####Plot1
+meanx <- mean(df4$Dittberner_moleco18_Delta_13C,na.rm = TRUE)
+print(meanx)
+meany <- mean(df41$LAPdSI_drought,na.rm = TRUE)
+print(meany)
+formula <- y ~ x
+p4<-df4 %>% 
+  mutate(quadrant = case_when(Dittberner_moleco18_Delta_13C > -35.57922 & LAPdSI_drought > 0   ~ "Q1",
+                              Dittberner_moleco18_Delta_13C <= -35.57922 & LAPdSI_drought > 0  ~ "Q2",
+                              Dittberner_moleco18_Delta_13C <= -35.57922 & LAPdSI_drought <= 0 ~ "Q3",
+                              TRUE                                         ~ "Q4")) %>% 
+  ggplot(aes(x = Dittberner_moleco18_Delta_13C, y = LAPdSI_drought)) + 
+  geom_point(aes(color=quadrant),alpha = 0.7,  size=9) +  
+  geom_smooth(method = "lm", se = T, fill="black", colour="black", size=0.2, alpha = 0.1) +  stat_poly_eq(aes(label = paste(..eq.label.., ..rr.label..,  sep = "~~~")),
+                                                                                                          label.x.npc = "right", label.y.npc = "top",
+                                                                                                          formula = formula, parse = TRUE, size = 5, colour="black")+
+  scale_colour_manual(values = c("#47a569", "#6689c3", "#ce494a", "#e9af41"))+
+  geom_text_repel(aes(Dittberner_moleco18_Delta_13C, LAPdSI_drought, label = name),  size=4, force=0.1,segment.size = 0.5,arrow = arrow(length = unit(0.01, 'npc')),family = 'Arial',
+                  fontface = 'bold',colour = "#696969",
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines"),
+                  segment.color = 'grey50',max.overlaps = Inf) + 
+  geom_vline(xintercept = -35.57922, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 0, color = "black", linetype = "dashed")+
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(plot.title = element_text(family = "Arial", color="#696969",face="bold",  size=35))  +  theme(panel.background = element_rect(fill = 'white')) +
+   ggtitle("Phenotypes")+
+  xlab(expression(bold(paste("WUE"[i]," (\u03B4"^"13", "C (\u2030))"))))+  
+  ylab("Leaf area plasticity index")+
+  theme(axis.text = element_text(family = "Arial", color="black", size=16)) +
+  theme(axis.title = element_text(family = "Arial", color="black", face="bold", size=18)) +  
+  theme(legend.position="none") 
+p4
+
+png("panels/p4.png", width = 7, height = 7, units = 'in', res = 350)
+p4
+dev.off() 
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###Plot4= leaf area plasticity index vs d13C GWAS
+###################################################################################################################################################
+###################################################################################################################################################
+
+####Create an annotation file compatible with the files we are creating.
+annotation = read_csv("data/annotation.csv")
+annotation <-annotation[!(annotation$INFO == "downstream_gene_variant"), ]
+nrow(annotation)
+head(annotation)
+annotation$gene <- gsub("(.*)..*", "\\1", annotation$gene)
+annotation$gene <-gsub("\\.","",annotation$gene)
+
+gene_description = read_csv("data/gene_description.csv")
+head(gene_description)
+annotation <- merge(annotation,gene_description,by= "gene")
+head(annotation)
+
+df5a=read_csv("data/GWAS/Dittberner_moleco18_Delta_13C.csv")
+df5a <- df5a[df5a$maf > 0.1, ]
+df5a <- merge(df5a,annotation,by=c("chr", "pos"))
+head(df5a)
+
+df5b=read_csv("data/GWAS/LAPdSI_drought.csv")
+df5b <- df5b[df5b$maf > 0.1, ]
+df5b <- merge(df5b,annotation,by=c("chr", "pos"))
+head(df5b)
+
+head(df5)
+df5 <- merge(df5a,df5b,by=c("chr", "pos"))
+head(df5)
+nrow(df5)
+
+p <- df5$score.x
+p=2*pnorm(-abs(p))
+nullRatio <- pi0est(p)
+nullRatioS <- pi0est(p, lambda=seq(0.40, 0.95, 0.05), smooth.log.pi0="TRUE")
+nullRatioM <- pi0est(p, pi0.method="bootstrap")
+qobj = qvalue(p, lambda=seq(0.05, 0.95, 0.1), smooth.log.pi0="TRUE")
+qvalues.x <- qobj$qvalues
+lfdr <- qobj$lfdr
+df5 <-cbind(df5,qvalues.x)
+
+p <- df5$score.y
+p=2*pnorm(-abs(p))
+nullRatio <- pi0est(p)
+nullRatioS <- pi0est(p, lambda=seq(0.40, 0.95, 0.05), smooth.log.pi0="TRUE")
+nullRatioM <- pi0est(p, pi0.method="bootstrap")
+qobj = qvalue(p, lambda=seq(0.05, 0.95, 0.1), smooth.log.pi0="TRUE")
+qvalues.y <- qobj$qvalues
+lfdr <- qobj$lfdr
+df5 <-cbind(df5,qvalues.y)
+
+df5<-df5 %>% unite(annotationb, gene.y, pos, sep = " pos. ")
+df5 <- df5[order(df5$qvalues.x) ,  ]
+head(df5)
+
+
+df5$GVE.x <- NULL
+df5$gene.x <- NULL
+df5$INFO.x <- NULL
+df5$annotation.x <- NULL
+df5$Gene_id.x <- NULL
+df5$GVE.y <- NULL
+
+write.csv(df5, "/Tables/GWAS_d13C vs leaf area stability index--drought.csv", row.names = FALSE)
+df5 <- df5[order(-df5$score.LA_plasticity) ,  ]
+head(df5)
+df5 <- df5 %>% 
+  rename(
+    score.d13C = score.x,
+    score.LA_plasticity = score.y,
+    annotation = annotation.y)
+head(df5)
+
+p5<-df5 %>% 
+  mutate(quadrant = case_when(score.d13C > 4 & score.LA_plasticity > 4   ~ "Q1",
+                              score.d13C <= 4 & score.LA_plasticity > 4  ~ "Q2",
+                              score.d13C <= 4 & score.LA_plasticity <= 4 ~ "Q3",
+                              TRUE                                         ~ "Q4")) %>% 
+  mutate(label = case_when(score.d13C >= 4 & score.LA_plasticity >= 4 ~  paste(annotationb))) %>% 
+  ggplot(aes(x = score.d13C, y = score.LA_plasticity)) + 
+  geom_point(aes(color=quadrant),alpha = 0.5,  size=3) + 
+  scale_colour_manual(values = c("#6689c3", "#c5c5c5", "#e9af41"))+
+  geom_text_repel(aes(score.d13C, score.LA_plasticity, label = label), fontface = 'bold', size=1, force=0.1,segment.size = 0.1,arrow = arrow(length = unit(0.01, 'npc')),family = 'Arial',
+                  fontface = 'bold',
+                  box.padding = unit(0.15, "lines"),
+                  point.padding = unit(0.45, "lines"),
+                  segment.color = 'grey50') + 
+  geom_vline(xintercept = 4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 4, color = "black", linetype = "dashed")+
+  theme(axis.title = element_text(family = "Arial", color="black", face="bold", size=18)) +  
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(axis.text = element_text(family = "Arial", color="black",  face="bold",size=16)) +
+  theme(plot.title = element_text(family = "Arial", color="#696969",face="bold",  size=35))  +  theme(panel.background = element_rect(fill = 'white')) +
+  ggtitle("GWAS")+
+  theme(legend.position="none") + 
+  ylab(expression(bold(atop("Leaf area plasticity index", paste("Genome-wide" ~ association ~ (-log["10"] ~ bolditalic("P")))))))+
+  xlab(expression(bold(atop(paste("WUE"[i]," (\u03B4"^"13", "C)"), paste("Genome-wide" ~ association ~ (-log["10"] ~ bolditalic("P")))))))+ 
+  scale_x_continuous(limits = c(0, 8), breaks = seq(0, 8, by = 2))+
+  scale_y_continuous(limits = c(0, 8), breaks = seq(0, 8, by = 2))
+
+p5
+png("panels/p5.png", width = 7, height = 7, units = 'in', res = 350)
+p5
+dev.off() 
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+####Create an annotation file compatible with the files we are creating.
+annotation = read_csv("data/gene_description.csv")
+head(annotation)
+#annotation<-annotation %>% 
+# rename(
+#  Gene_id = gene
+#)
+head(annotation)
+
+###Open dataframe with phenotypes
+phenotypes = read.csv("/data/phenotypes.csv", header = TRUE, sep = ",", quote = "\"",
+                      dec = ".", fill = TRUE,comment.char = "")
+head(phenotypes)
+
+#####Run autocorrelation matrix condition C
+head(phenotypes)
+phenotypesselected<- select(phenotypes, Dittberner_moleco18_Delta_13C)
+accession_id1<-phenotypes$accession_id
+selected <-cbind(accession_id1, phenotypesselected)
+head(selected)
+transposedfinal = read_csv("data/transposedfinal.csv")
+head(transposedfinal)
+colnames(transposedfinal)[colnames(transposedfinal)=="accession_id"] <- "accession_id1"
+final<-merge(selected, transposedfinal, by = "accession_id1", sort = TRUE)
+head(final)
+accession_idsorted<-final$accession_id1
+final$accession_id1 <- NULL
+res<-rcorr(as.matrix(final), type = c("pearson","spearman"))
+AA<-signif(res$r, 2)
+BB<-signif(res$P,2)
+outputC1 <-cbind(accession_idsorted,AA)
+outputC1 <- outputC1[-1, 1:2]
+outputC1 <- as.data.frame(outputC1)
+outputC1 <- outputC1 %>% 
+  rownames_to_column(var = "gene")
+outputC2 <-cbind(accession_idsorted,BB)
+outputC2 <- outputC2[-1, 1:2]
+outputC2 <- as.data.frame(outputC2)
+outputC2 <- outputC2 %>% 
+  rownames_to_column(var = "gene")
+outputC <- merge(outputC1,outputC2,by="gene")
+outputC <- outputC[order(-outputC$Dittberner_moleco18_Delta_13C.x) ,  ]
+head(outputC)
+outputC <- merge(outputC,annotation,by="gene")
+outputC <- outputC %>% 
+  rename(
+    Delta_13C_rs = Dittberner_moleco18_Delta_13C.x,
+    Delta_13C_P_val = Dittberner_moleco18_Delta_13C.y)
+outputC$accession_idsorted.x <- NULL
+outputC$accession_idsorted.y <- NULL
+outputC <- outputC[order(-outputC$Delta_13C_rs) ,  ]
+head(outputC, n=100)
+tail(outputC, n=50)
+head(outputC)
+write.csv(outputC, "Tables/TWAS_Delta_13C.csv", row.names = FALSE)
+
+#####Merge df4 
+df6 <- merge(outputC,outputB,by="gene")
+nrow(df6)
+df6[df6 == "NAN"] <- NA
+df6[complete.cases(df6),]
+
+df6$accession_idsorted.y <- NULL
+df6$annotation.x <- NULL
+df6$accession_idsorted.x <- NULL
+df6$Gene_id.x <- NULL
+df6$symbol.x <- NULL
+df6$annotation.x <- NULL
+head(df6)
+
+df6 <- df6 %>% 
+  rename(
+    symbol = symbol.y,
+    annotation = annotation.y)
+head(df6)
+
+
+p6<-df6 %>% 
+  mutate(quadrant = case_when(Delta_13C_rs <= -0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~ "Q1",
+                              Delta_13C_rs <= -0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~ "Q2",
+                              Delta_13C_rs >= 0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~ "Q3",
+                              Delta_13C_rs >= 0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~ "Q4",
+                              TRUE                                         ~ "Q5")) %>% 
+  mutate(label = case_when(Delta_13C_rs <= -0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~  paste(symbol),
+                           Delta_13C_rs <= -0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~  paste(symbol),
+                           Delta_13C_rs >= 0.4 & Leaf_area_plasticity_index_rs >= 0.4 ~  paste(symbol),
+                           Delta_13C_rs >= 0.4 & Leaf_area_plasticity_index_rs <= -0.4 ~  paste(symbol))) %>% 
+  
+  ggplot(aes(x = Delta_13C_rs, y = Leaf_area_plasticity_index_rs)) + 
+  geom_point(aes(color=quadrant),alpha = 0.8,  size=12, shape = "-") +  
+  scale_colour_manual(values = c( "#6689c3","#ce494a", "#47a569", "#e9af41", "#c5c5c5"))+
+  geom_text_repel(aes(Delta_13C_rs, Leaf_area_plasticity_index_rs, label = label),  size=2, force=0.1,segment.size = 0.3,arrow = arrow(length = unit(0.01, 'npc')),family = 'Arial',
+                  fontface = 'bold',
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.35, "lines"),
+                  segment.color = 'grey50',max.overlaps = Inf) + 
+  geom_vline(xintercept = 0.4, color = "black", linetype = "dashed")+
+  geom_vline(xintercept = -0.4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 0.4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = -0.4, color = "black", linetype = "dashed")+
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(axis.text = element_text(family = "Arial", color="black", size=18)) +
+  theme(axis.title = element_text(family = "Arial", color="black", face="bold", size=16)) +  
+  theme(legend.position="none") + 
+  theme(plot.title = element_text(family = "Arial", color="#696969",face="bold",  size=35)) +  theme(panel.background = element_rect(fill = 'white')) +
+  ggtitle("TWAS")+
+  xlab(expression(bold(atop(paste("WUE"[i]," (\u03B4"^"13", "C)"), paste("transcriptome-wide association ", (r[s]))))))+ 
+  ylab(expression(bold(atop("Leaf area plasticity index", paste("transcriptome-wide association ", (r[s]))))))+ 
+  scale_y_continuous(limits = c(-0.8, 0.8), breaks = seq(-0.8, 0.8, by = 0.4))
+
+
+p6
+
+png("panels/p6.png", width = 7, height = 7, units = 'in', res = 350)
+p6
+dev.off() 
+
+######################################################################################################
+######################################################################################################
+######################################################################################################
+######################################################################################################
+######################################################################################################
+######################################################################################################
+######################################################################################################
+
+M1 <- image_read("panels/p1.png")
+M2 <- image_read("panels/p2.png")
+M3 <- image_read("panels/p3.png")
+
+M4 <- image_read("panels/p4.png")
+M5 <- image_read("panels/p5.png")
+M6 <- image_read("panels/p6.png")
+
+
+
+plot_grid(rasterGrob(M1),rasterGrob(M4), rasterGrob(M2),rasterGrob(M5),rasterGrob(M3),rasterGrob(M6),labels=c('A', 'D', 'B',"E", "C","F"), greedy = TRUE, ncol =2, nrow = 3, align = 'v', hjust=0, label_size=35)
+png("Figure 4.png", width = 13, height = 18, units = 'in', res = 350)
+plot_grid(rasterGrob(M1),rasterGrob(M4), rasterGrob(M2),rasterGrob(M5),rasterGrob(M3),rasterGrob(M6),labels=c('A', 'D', 'B',"E", "C","F"), greedy = TRUE, ncol =2, nrow = 3, align = 'v', hjust=0, label_size=35)
+dev.off()
+
