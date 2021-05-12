@@ -29,4 +29,4 @@ To run the script for any of these:
 For any questions regarding any of these analyses and code, please email Ángel Ferrero-Serrano (aaf11@psu.edu)
 
 
-***Upload in progress (5/10/21). This should be completed within the next few days. In the meantime, please email aaf11@psu.edu with any questions.
+***Upload in progress (5/10/21). This should be completed within the next few days.
