@@ -14,16 +14,16 @@
 
 ##### To run the script for any of these:
 
-1.     - Open folder for the figure and the underlying analysis to be reproduced (i.e., Figure 1).
+- Open folder for the figure and the underlying analysis to be reproduced (i.e., Figure 1).
 
-3. -     unzip all files and subfolders within the /Data folder. These were compressed to facilitate the upload into GitHub.
+- Unzip all files and subfolders within the /Data folder. These were compressed to facilitate the upload into GitHub.
 
-5. -     Select the project corresponding to each figure (i.e., Figure 1.Rproj). A new R session (process) should start.
+- Select the project corresponding to each figure (i.e., Figure 1.Rproj). A new R session (process) should start.
 
-7. -     From the opened project in RStudio, Open the .R script for that figure (i.e., Figure 1.R).
+- From the opened project in RStudio, Open the .R script for that figure (i.e., Figure 1.R).
 
 -     Running the opened script should run sourcing the data files from the /data folder.
-
+- Figure should render the figures in the main figure folder.
 -     The raw outputs from GWA analysis are placed in the corresponding figures in the data/GWAS subfolder.
 -     Filtered and annotated versions of those raw GWASP outputs will be produced in the /tables folder.
 -     Similarly, the output of TWAS analysis will be saved in the same/tables folder.
