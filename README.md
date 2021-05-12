@@ -28,7 +28,7 @@
 
 - The raw outputs from GWA analysis are placed in the corresponding figures in the data/GWAS subfolder.
 
-- Filtered and annotated versions of those raw GWASP outputs will be produced in the /tables folder.
+- Filtered and annotated versions of those raw GWAS outputs will be produced in the /tables folder.
 
 - Similarly, the output of TWAS analysis will be saved in the same/tables folder.
 
