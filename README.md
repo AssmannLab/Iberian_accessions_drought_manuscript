@@ -12,7 +12,7 @@ Data and code for analysis and figures
 
 To run the script for any of these:
 
-1. Open folder for the figure and the underlying analysis to be reproduced.
+1. Open folder for the figure and the underlying analysis to be reproduced (i.e., Figure 1).
 
 2. unzip all files and subfolders within the /Data folder. These were compressed to facilitate the upload into GitHub.
 
