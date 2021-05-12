@@ -8,7 +8,7 @@ Biology Department, Penn State University, 208 Mueller Laboratory, University Pa
 
 Data and code for analysis and figures
 
--Before running the script corresponding to the analysis and panels behind each of the figures in the manuscript, please make sure to unzip all files and subfolders within the /Data folder and all s
+-Before running the script corresponding to the analysis and panels behind each of the figures in the manuscript, please make sure to unzip all files within the /Data folder and its subfolders.
 
 To run the script for any of these:
 
@@ -20,7 +20,7 @@ To run the script for any of these:
 
 4. From the opened project in RStudio, Open the .R script for that figure (i.e., Figure 1.R).
 
-5. Running the opened script should run sourcing the data files from the /data folder.
+5. Running the opened script should run sourcing the data files from the /data folder. 
 
 - The raw outputs from GWA analysis are placed in the corresponding figures in the data/GWAS subfolder.
 - Filtered and annotated versions of those raw GWASP outputs will be produced in the /tables folder.
