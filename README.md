@@ -1,32 +1,37 @@
-Adaptive growth homeostasis in response to drought in Iberian Arabidopsis accessions
 
-Ángel Ferrero-Serrano, Sarah M. Assmann
 
-bioRxiv 2021.05.07.443185; doi: https://doi.org/10.1101/2021.05.07.443185 
+# **Adaptive growth homeostasis in response to drought in Iberian Arabidopsis accessions**
 
-Biology Department, Penn State University, 208 Mueller Laboratory, University Park, PA, 16802, USA
+##### Ángel Ferrero-Serrano, Sarah M. Assmann
 
-Data and code for analysis and figures
+##### bioRxiv 2021.05.07.443185; doi: https://doi.org/10.1101/2021.05.07.443185
 
--Before running the script corresponding to the analysis and panels behind each of the figures in the manuscript, please make sure to unzip all files within the /Data folder and its subfolders.
+###### Biology Department, Penn State University, 208 Mueller Laboratory, University Park, PA, 16802, USA
 
-To run the script for any of these:
+#### Data and code for analysis and figures
 
-1. Open folder for the figure and the underlying analysis to be reproduced (i.e., Figure 1).
+- Before running the script corresponding to the analysis and panels behind each of the figures in the manuscript, please make sure to unzip all files within the /Data folder and its subfolders.
 
-2. unzip all files and subfolders within the /Data folder. These were compressed to facilitate the upload into GitHub.
+##### To run the script for any of these:
 
-3. Select the project corresponding to each figure (i.e., Figure 1.Rproj). A new R session (process) should start.
+- Open folder for the figure and the underlying analysis to be reproduced (i.e., Figure 1).
 
-4. From the opened project in RStudio, Open the .R script for that figure (i.e., Figure 1.R).
+- Unzip all files and subfolders within the /Data folder. These were compressed to facilitate the upload into GitHub.
 
-5. Running the opened script should run sourcing the data files from the /data folder. 
+- Select the project corresponding to each figure (i.e., Figure 1.Rproj). A new R session (process) should start.
+
+- From the opened project in RStudio, Open the .R script for that figure (i.e., Figure 1.R).
+
+- Running the opened script should run sourcing the data files from the /data folder.
+
+- Figure should render the figures in the main figure folder.
 
 - The raw outputs from GWA analysis are placed in the corresponding figures in the data/GWAS subfolder.
-- Filtered and annotated versions of those raw GWASP outputs will be produced in the /tables folder.
+
+- Filtered and annotated versions of those raw GWAS outputs will be produced in the /tables folder.
+
 - Similarly, the output of TWAS analysis will be saved in the same/tables folder.
 
-For any questions regarding any of these analyses and code, please email Ángel Ferrero-Serrano (aaf11@psu.edu)
-
+##### *For any questions regarding any of these analyses and code, please email Ángel Ferrero-Serrano (aaf11@psu.edu)*
 
 ***Upload in progress (5/10/21). This should be completed within the next few days.
