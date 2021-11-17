@@ -1,0 +1,17 @@
+Gene_id,description,symbol,stability_index,TRT,Phenotypic_potential
+AT5G39471,Cysteine/Histidine-rich C1 domain family protein(AT5G39471),AT5G39471,0.15000000000000002,LAP_drought,0.55
+AT5G39471,Cysteine/Histidine-rich C1 domain family protein(AT5G39471),AT5G39471,0.15000000000000002,LAP_well_watered,0.4
+AT1G68870,SOB five-like 2(SOFL2),SOFL2,0.13,LAP_drought,0.53
+AT1G68870,SOB five-like 2(SOFL2),SOFL2,0.13,LAP_well_watered,0.4
+AT1G55490,chaperonin 60 beta(CPN60B),CPN60B,0.03999999999999998,LAP_drought,0.48
+AT1G55490,chaperonin 60 beta(CPN60B),CPN60B,0.03999999999999998,LAP_well_watered,0.44
+AT5G60160,Zn-dependent exopeptidases superfamily protein(AT5G60160),AT5G60160,0.019999999999999962,LAP_drought,-0.4
+AT5G60160,Zn-dependent exopeptidases superfamily protein(AT5G60160),AT5G60160,0.019999999999999962,LAP_well_watered,-0.42
+AT4G14220,RING-H2 group F1A(RHF1A),RHF1A,0.009999999999999953,LAP_drought,-0.4
+AT4G14220,RING-H2 group F1A(RHF1A),RHF1A,0.009999999999999953,LAP_well_watered,-0.41
+AT4G15260,UDP-Glycosyltransferase superfamily protein(AT4G15260),AT4G15260,0,LAP_drought,-0.41
+AT4G15260,UDP-Glycosyltransferase superfamily protein(AT4G15260),AT4G15260,0,LAP_well_watered,-0.41
+AT5G16800,Acyl-CoA N-acyltransferases (NAT) superfamily protein(AT5G16800),AT5G16800,-0.019999999999999962,LAP_drought,-0.42
+AT5G16800,Acyl-CoA N-acyltransferases (NAT) superfamily protein(AT5G16800),AT5G16800,-0.019999999999999962,LAP_well_watered,-0.4
+AT5G43320,casein kinase I-like 8(ckl8),CKL8,-0.06,LAP_drought,0.44
+AT5G43320,casein kinase I-like 8(ckl8),CKL8,-0.06,LAP_well_watered,0.5

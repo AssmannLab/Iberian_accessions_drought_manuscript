@@ -1,0 +1,536 @@
+Gene_id,accession_idsorted,LAP_drought,annotation,symbol
+AT1G61850,9557,0.65,phospholipase A I-like protein(AT1G61850),AT1G61850
+AT4G37235,9524,0.59,Uncharacterized protein family (UPF0497)(AT4G37235),AT4G37235
+AT1G10510,9845,0.58,RNI-like superfamily protein(emb2004),emb2004
+AT1G12100,9568,0.56,Bifunctional inhibitor/lipid-transfer protein/seed storage 2S albumin superfamily protein(AT1G12100),AT1G12100
+AT5G08480,9543,0.55,VQ motif-containing protein(AT5G08480),AT5G08480
+AT5G35960,9846,0.55,Protein kinase family protein(AT5G35960),AT5G35960
+AT5G39471,9543,0.55,Cysteine/Histidine-rich C1 domain family protein(AT5G39471),AT5G39471
+AT1G26230,9825,0.54,TCP-1/cpn60 chaperonin family protein(Cpn60beta4),Cpn60beta4
+AT1G68870,9855,0.53,SOB five-like 2(SOFL2),SOFL2
+ATCG00340,9588,0.53,PSAB,PSAB
+AT1G17960,9944,0.52,Threonyl-tRNA synthetase(AT1G17960),AT1G17960
+AT4G37170,9874,0.52,Pentatricopeptide repeat (PPR) superfamily protein(AT4G37170),AT4G37170
+ATCG00130,9944,0.52,ATPF,ATPF
+AT2G37660,9846,0.51,"NAD(P)-binding Rossmann-fold superfamily protein(AT2G37660)",AT2G37660
+AT3G06990,6970,0.51,Cysteine/Histidine-rich C1 domain family protein(AT3G06990),AT3G06990
+AT4G04280,9598,0.51,hypothetical protein(AT4G04280),AT4G04280
+AT1G12460,9568,0.5,Leucine-rich repeat protein kinase family protein(AT1G12460),AT1G12460
+AT1G21870,9550,0.5,golgi nucleotide sugar transporter 5(GONST5),GONST5
+AT1G27910,9524,0.5,plant U-box 45(PUB45),PUB45
+AT2G01029,9526,0.5,hypothetical protein(AT2G01029),AT2G01029
+AT3G55485,9550,0.5,ncRNA(AT3G55485),AT3G55485
+AT4G14050,6970,0.5,Pentatricopeptide repeat (PPR) superfamily protein(AT4G14050),AT4G14050
+AT4G30940,9560,0.5,BTB/POZ domain with WD40/YVTN repeat-like protein(AT4G30940),AT4G30940
+AT4G35520,9557,0.5,MUTL protein homolog 3(MLH3),MLH3
+AT5G28150,6970,0.5,hypothetical protein (DUF868)(AT5G28150),AT5G28150
+AT5G42840,9535,0.5,Cysteine/Histidine-rich C1 domain family protein(AT5G42840),AT5G42840
+AT5G43280,9568,0.5,"delta(3,5),delta(2,4)-dienoyl-CoA isomerase 1(DCI1)",DCI1
+AT5G46440,9586,0.5,PPR containing-like protein(AT5G46440),AT5G46440
+ATCG00720,9601,0.5,PETB,PETB
+AT1G06030,9531,0.49,pfkB-like carbohydrate kinase family protein(AT1G06030),AT1G06030
+AT1G12855,9587,0.49,F-box family protein(AT1G12855),AT1G12855
+AT1G46192,9601,0.49,hypothetical protein(AT1G46192),AT1G46192
+AT1G56050,9601,0.49,GTP-binding protein-like protein(AT1G56050),AT1G56050
+AT1G57570,9587,0.49,Mannose-binding lectin superfamily protein(AT1G57570),AT1G57570
+AT2G16910,9825,0.49,basic helix-loop-helix (bHLH) DNA-binding superfamily protein(AMS),AMS
+AT3G09240,9535,0.49,kinase with tetratricopeptide repeat domain-containing protein(BSK9),BSK9
+AT3G58580,9560,0.49,DNAse I-like superfamily protein(AT3G58580),AT3G58580
+AT3G60310,9844,0.49,acyl-CoA synthetase family protein(AT3G60310),AT3G60310
+AT4G26710,9874,0.49,"ATPase, V0 complex, subunit E(AT4G26710)",AT4G26710
+AT4G32445,9846,0.49,ncRNA(MIR419),MIR419
+AT4G38360,9567,0.49,organic solute transporter ostalpha protein (DUF300)(LAZ1),LAZ1
+AT5G18590,9531,0.49,Galactose oxidase/kelch repeat superfamily protein(AT5G18590),AT5G18590
+AT5G23280,6970,0.49,TCP family transcription factor(AT5G23280),AT5G23280
+AT5G27590,9567,0.49,hypothetical protein(AT5G27590),AT5G27590
+AT5G43745,9601,0.49,"ion channel POLLUX-like protein, putative (DUF1012)(AT5G43745)",AT5G43745
+AT5G49200,9518,0.49,WD-40 repeat family protein / zfwd4 protein (ZFWD4)(AT5G49200),ZFWD4
+AT5G65570,9550,0.49,Tetratricopeptide repeat (TPR)-like superfamily protein(AT5G65570),AT5G65570
+ATCG00140,6970,0.49,ATPH,ATPH
+ATCG00300,9568,0.49,YCF9,YCF9
+ATCG00330,9587,0.49,RPS14,RPS14
+ATCG00490,9944,0.49,RBCL,RBCL
+AT1G12730,9518,0.48,GPI transamidase subunit PIG-U(AT1G12730),AT1G12730
+AT1G20260,9531,0.48,"ATPase, V1 complex, subunit B protein(VAB3)",VAB3
+AT1G45160,6970,0.48,Protein kinase superfamily protein(AT1G45160),AT1G45160
+AT1G55490,9518,0.48,chaperonin 60 beta(CPN60B),CPN60B
+AT2G43690,9880,0.48,Concanavalin A-like lectin protein kinase family protein(AT2G43690),AT2G43690
+AT3G21470,9557,0.48,Pentatricopeptide repeat (PPR-like) superfamily protein(AT3G21470),AT3G21470
+AT3G28970,8357,0.48,defective in cullin neddylation protein (DUF298)(AAR3),AAR3
+AT3G29130,9567,0.48,kxDL motif protein(AT3G29130),AT3G29130
+AT3G57970,9526,0.48,Emsy N Terminus (ENT)/ plant Tudor-like domains-containing protein(AT3G57970),AT3G57970
+AT4G03824,9874,0.48,hypothetical protein(AT4G03824),AT4G03824
+AT4G18390,9588,0.48,"TEOSINTE BRANCHED 1, cycloidea and PCF transcription factor 2(TCP2)",TCP2
+AT5G08280,9593,0.48,hydroxymethylbilane synthase(HEMC),HEMC
+AT5G16000,8357,0.48,NSP-interacting kinase 1(NIK1),NIK1
+AT5G28700,9557,0.48,hypothetical protein(AT5G28700),AT5G28700
+AT5G42350,9845,0.48,Galactose oxidase/kelch repeat superfamily protein(AT5G42350),AT5G42350
+ATCG00070,9846,0.48,PSBK,PSBK
+AT1G23120,9588,0.47,Polyketide cyclase/dehydrase and lipid transport superfamily protein(AT1G23120),AT1G23120
+AT1G68490,9593,0.47,translocase subunit seca(AT1G68490),AT1G68490
+AT3G09700,9587,0.47,Chaperone DnaJ-domain superfamily protein(AT3G09700),AT3G09700
+AT3G59360,9547,0.47,UDP-galactose transporter 6(UTR6),UTR6
+AT3G63510,9601,0.47,FMN-linked oxidoreductases superfamily protein(AT3G63510),AT3G63510
+AT4G00695,9844,0.47,Spc97/Spc98 family of spindle pole body (SBP) component(AT4G00695),AT4G00695
+AT4G04293,9819,0.47,hypothetical protein(AT4G04293),AT4G04293
+AT4G04370,9871,0.47,Tetratricopeptide repeat (TPR)-like superfamily protein(AT4G04370),AT4G04370
+AT4G20130,9524,0.47,plastid transcriptionally active 14(PTAC14),PTAC14
+AT4G26020,9518,0.47,4/1 protein short form protein(AT4G26020),AT4G26020
+AT5G38820,9880,0.47,Transmembrane amino acid transporter family protein(AT5G38820),AT5G38820
+AT5G48040,9880,0.47,Ubiquitin carboxyl-terminal hydrolase family protein(AT5G48040),AT5G48040
+ATCG00280,9560,0.47,PSBC,PSBC
+ATCG00350,9593,0.47,PSAA,PSAA
+ATCG00680,9587,0.47,PSBB,PSBB
+ATCG00710,9598,0.47,PSBH,PSBH
+AT4G04130,9535,0.46,hypothetical protein(AT4G04130),AT4G04130
+AT5G55400,9844,0.46,Actin binding Calponin homology (CH) domain-containing protein(AT5G55400),AT5G55400
+AT5G65350,9825,0.46,histone 3 11(HTR11),HTR11
+ATMG00513,9855,0.46,"NAD5","NAD5"
+AT1G17940,9880,0.45,Endosomal targeting BRO1-like domain-containing protein(AT1G17940),AT1G17940
+AT1G22330,9560,0.45,RNA-binding (RRM/RBD/RNP motifs) family protein(AT1G22330),AT1G22330
+AT1G43780,9526,0.45,serine carboxypeptidase-like 44(scpl44),scpl44
+AT1G76270,9944,0.45,O-fucosyltransferase family protein(AT1G76270),AT1G76270
+AT2G26640,9524,0.45,3-ketoacyl-CoA synthase 11(KCS11),KCS11
+AT2G30695,9586,0.45,bacterial trigger factor(AT2G30695),AT2G30695
+AT2G40840,9880,0.45,disproportionating enzyme 2(DPE2),DPE2
+AT2G46670,9587,0.45,CCT motif family protein(AT2G46670),AT2G46670
+AT3G18310,9598,0.45,TATA box-binding protein associated factor RNA polymerase I subunit C(AT3G18310),AT3G18310
+AT3G45420,9593,0.45,Concanavalin A-like lectin protein kinase family protein(AT3G45420),AT3G45420
+AT3G52750,9874,0.45,Tubulin/FtsZ family protein(FTSZ2-2),FTSZ2-2
+AT3G53570,8357,0.45,serine/threonine-protein kinase AFC1(FC1),FC1
+AT3G59550,9846,0.45,Rad21/Rec8-like family protein(SYN3),SYN3
+AT3G61130,9518,0.45,galacturonosyltransferase 1(GAUT1),GAUT1
+AT3G61140,9522,0.45,COP9 signalosome complex subunit 1(FUS6),FUS6
+AT4G00760,6970,0.45,pseudo-response regulator 8(APRR8),APRR8
+AT4G03480,9557,0.45,Ankyrin repeat family protein(AT4G03480),AT4G03480
+AT4G08700,9819,0.45,Drug/metabolite transporter superfamily protein(ATPUP13),ATPUP13
+AT4G14368,9518,0.45,Regulator of chromosome condensation (RCC1) family protein(AT4G14368),AT4G14368
+AT5G06270,9531,0.45,hypothetical protein(AT5G06270),AT5G06270
+AT5G06850,9871,0.45,C2 calcium/lipid-binding plant phosphoribosyltransferase family protein(FTIP1),FTIP1
+AT5G42130,9531,0.45,Mitochondrial substrate carrier family protein(Mfl1),Mfl1
+AT5G44520,9944,0.45,NagB/RpiA/CoA transferase-like superfamily protein(AT5G44520),AT5G44520
+AT5G55810,9871,0.45,nicotinate/nicotinamide mononucleotide adenyltransferase(NMNAT),NMNAT
+ATMG01330,9588,0.45,ORF107H,ORF107H
+AT1G11880,9832,0.44,"transferases, transferring hexosyl groups(AT1G11880)",AT1G11880
+AT1G13970,9593,0.44,beta-hexosaminidase (DUF1336)(AT1G13970),AT1G13970
+AT1G28920,9584,0.44,tRNA(AT1G28920),AT1G28920
+AT1G45000,9825,0.44,AAA-type ATPase family protein(AT1G45000),AT1G45000
+AT1G45120,9871,0.44,hypothetical protein(AT1G45120),AT1G45120
+AT1G51740,9524,0.44,syntaxin of plants 81(SYP81),SYP81
+AT1G59900,9598,0.44,pyruvate dehydrogenase complex E1 alpha subunit(E1 ALPHA),E1 ALPHA
+AT1G79150,6970,0.44,binding protein(AT1G79150),AT1G79150
+AT2G02560,8357,0.44,cullin-associated and neddylation dissociated(CAND1),CAND1
+AT2G04280,9880,0.44,calcium ion-binding protein(AT2G04280),AT2G04280
+AT2G17610,9593,0.44,hypothetical protein(AT2G17610),AT2G17610
+AT2G23550,9522,0.44,methyl esterase 6(MES6),MES6
+AT2G26830,9819,0.44,Protein kinase superfamily protein(emb1187),emb1187
+AT2G47580,9944,0.44,spliceosomal protein U1A(U1A),U1A
+AT3G13470,9825,0.44,TCP-1/cpn60 chaperonin family protein(Cpn60beta2),Cpn60beta2
+AT3G16290,9535,0.44,AAA-type ATPase family protein(EMB2083),EMB2083
+AT3G28560,9832,0.44,BCS1 AAA-type ATPase(AT3G28560),AT3G28560
+AT3G29320,9874,0.44,"Glycosyl transferase, family 35(PHS1)",PHS1
+AT3G57510,9871,0.44,Pectin lyase-like superfamily protein(ADPG1),ADPG1
+AT3G59870,9593,0.44,hypothetical protein(AT3G59870),AT3G59870
+AT4G03070,9524,0.44,2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein(AOP1),AOP1
+AT4G15096,9588,0.44,hypothetical protein(AT4G15096),AT4G15096
+AT4G20020,9871,0.44,multiple organellar RNA editing factor(MORF1),MORF1
+AT4G30990,9587,0.44,ARM repeat superfamily protein(AT4G30990),AT4G30990
+AT4G37685,9584,0.44,hypothetical protein(AT4G37685),AT4G37685
+AT5G26250,9601,0.44,Major facilitator superfamily protein(AT5G26250),AT5G26250
+AT5G39790,6970,0.44,PROTEIN TARGETING TO STARCH (PTST)(AT5G39790),AT5G39790
+AT5G43320,9588,0.44,casein kinase I-like 8(ckl8),CKL8
+AT5G66830,9535,0.44,F-box protein (DUF295)(AT5G66830),AT5G66830
+ATMG00520,9874,0.44,MATR,MATR
+AT1G12340,9522,0.43,Cornichon family protein(AT1G12340),AT1G12340
+AT1G14020,9832,0.43,O-fucosyltransferase family protein(AT1G14020),AT1G14020
+AT1G24370,9584,0.43,hypothetical protein(AT1G24370),AT1G24370
+AT1G27520,9522,0.43,Glycosyl hydrolase family 47 protein(AT1G27520),AT1G27520
+AT1G31500,9533,0.43,DNAse I-like superfamily protein(AT1G31500),AT1G31500
+AT1G60070,9518,0.43,"Adaptor protein complex AP-1, gamma subunit(AT1G60070)",AT1G60070
+AT1G69640,9905,0.43,sphingoid base hydroxylase 1(SBH1),SBH1
+AT1G71820,9584,0.43,SEC6(SEC6),SEC6
+AT1G78650,9584,0.43,DNA-directed DNA polymerase(POLD3),POLD3
+AT1G78720,9819,0.43,SecY protein transport family protein(AT1G78720),AT1G78720
+AT2G16790,9567,0.43,P-loop containing nucleoside triphosphate hydrolases superfamily protein(AT2G16790),AT2G16790
+AT2G20650,9587,0.43,RING/U-box superfamily protein(AT2G20650),AT2G20650
+AT2G40490,9874,0.43,Uroporphyrinogen decarboxylase(HEME2),HEME2
+AT2G40955,9543,0.43,hypothetical protein(AT2G40955),AT2G40955
+AT3G05240,9825,0.43,mitochondrial editing factor 19(MEF19),MEF19
+AT3G13590,9518,0.43,Cysteine/Histidine-rich C1 domain family protein(AT3G13590),AT3G13590
+AT3G27906,9535,0.43,hypothetical protein(AT3G27906),AT3G27906
+AT3G43790,9832,0.43,zinc induced facilitator-like 2(ZIFL2),ZIFL2
+AT3G47930,9586,0.43,"L-galactono-1,4-lactone dehydrogenase(GLDH)",GLDH
+AT4G01420,9522,0.43,calcineurin B-like protein 5(CBL5),CBL5
+AT4G02130,9586,0.43,galacturonosyltransferase 6(GATL6),GATL6
+AT4G04290,9601,0.43,hypothetical protein(AT4G04290),AT4G04290
+AT4G05410,9593,0.43,Transducin/WD40 repeat-like superfamily protein(YAO),YAO
+AT4G18140,9855,0.43,SCP1-like small phosphatase 4b(SSP4b),SSP4b
+AT4G20410,9880,0.43,gamma-soluble NSF attachment protein(GSNAP),GSNAP
+AT4G25270,9855,0.43,Tetratricopeptide repeat (TPR)-like superfamily protein(OTP70),OTP70
+AT4G36791,9832,0.43,hypothetical protein(AT4G36791),AT4G36791
+AT5G03650,9524,0.43,starch branching enzyme 2.2(SBE2.2),SBE2.2
+AT5G05200,9533,0.43,Protein kinase superfamily protein(AT5G05200),AT5G05200
+AT5G11160,9855,0.43,adenine phosphoribosyltransferase 5(APT5),APT5
+AT5G33320,9593,0.43,Glucose-6-phosphate/phosphate translocator-like protein(CUE1),CUE1
+AT5G39900,9547,0.43,Small GTP-binding protein(AT5G39900),AT5G39900
+AT5G39990,9584,0.43,"Core-2/I-branching beta-1,6-N-acetylglucosaminyltransferase family protein(AT5G39990)",AT5G39990
+ATCG01050,9518,0.43,NDHD,NDHD
+AT1G23960,9547,0.42,hypothetical protein (DUF626)(AT1G23960),AT1G23960
+AT1G27920,9526,0.42,microtubule-associated protein 65-8(MAP65-8),MAP65-8
+AT1G51080,9584,0.42,golgin family A protein(AT1G51080),AT1G51080
+AT1G60545,9871,0.42,ncRNA(AT1G60545),AT1G60545
+AT1G63610,9518,0.42,hypothetical protein(AT1G63610),AT1G63610
+AT1G64480,9593,0.42,calcineurin B-like protein 8(CBL8),CBL8
+AT2G26200,9871,0.42,S-adenosyl-L-methionine-dependent methyltransferases superfamily protein(AT2G26200),AT2G26200
+AT2G27460,9550,0.42,sec23/sec24 transport family protein(AT2G27460),AT2G27460
+AT2G28000,9601,0.42,chaperonin-60alpha(CPN60A),CPN60A
+AT2G40440,9832,0.42,BTB/POZ domain protein(AT2G40440),AT2G40440
+AT3G05327,9880,0.42,Cyclin family protein(AT3G05327),AT3G05327
+AT3G12960,9844,0.42,seed maturation protein(SMP1),SMP1
+AT3G30393,9588,0.42,hypothetical protein(AT3G30393),AT3G30393
+AT3G59790,9560,0.42,MAP kinase 10(MPK10),MPK10
+AT4G03470,9550,0.42,Ankyrin repeat family protein(AT4G03470),AT4G03470
+AT4G17050,9846,0.42,ureidoglycine aminohydrolase(UGLYAH),UGLYAH
+AT4G17470,9880,0.42,alpha/beta-Hydrolases superfamily protein(AT4G17470),AT4G17470
+AT4G34830,9586,0.42,Pentatricopeptide repeat (PPR) superfamily protein(MRL1),MRL1
+AT5G02244,9518,0.42,miscRNA(AT5G02244),AT5G02244
+AT5G18700,9587,0.42,kinase family with ARM repeat domain-containing protein(AT5G18700),AT5G18700
+AT5G25820,9832,0.42,Exostosin family protein(AT5G25820),AT5G25820
+AT5G28085,9905,0.42,hypothetical protein(AT5G28085),AT5G28085
+AT5G43820,9871,0.42,Pentatricopeptide repeat (PPR) superfamily protein(AT5G43820),AT5G43820
+AT5G45600,9533,0.42,YEATS family protein(GAS41),GAS41
+AT5G47870,9568,0.42,cobalt ion-binding protein(RAD52-2),RAD52-2
+AT5G55550,9526,0.42,RNA-binding (RRM/RBD/RNP motifs) family protein(AT5G55550),AT5G55550
+AT5G61570,9587,0.42,Protein kinase superfamily protein(AT5G61570),AT5G61570
+AT1G06740,9533,0.41,MuDR family transposase(MUG3),MUG3
+AT1G14455,9518,0.41,hypothetical protein(AT1G14455),AT1G14455
+AT1G19940,9550,0.41,glycosyl hydrolase 9B5(GH9B5),GH9B5
+AT1G30440,9568,0.41,Phototropic-responsive NPH3 family protein(AT1G30440),AT1G30440
+AT1G31993,9567,0.41,hypothetical protein(AT1G31993),AT1G31993
+AT1G44170,9871,0.41,aldehyde dehydrogenase 3H1(ALDH3H1),ALDH3H1
+AT1G44900,9587,0.41,minichromosome maintenance (MCM2/3/5) family protein(MCM2),MCM2
+AT1G52080,9944,0.41,actin binding protein family(AR791),AR791
+AT1G61980,9601,0.41,Mitochondrial transcription termination factor family protein(AT1G61980),AT1G61980
+AT1G63680,9535,0.41,ALBINO OR PALE-GREEN 13(MURE),MURE
+AT1G75394,9844,0.41,miscRNA(AT1G75394),AT1G75394
+AT2G18245,9560,0.41,alpha/beta-Hydrolases superfamily protein(AT2G18245),AT2G18245
+AT2G22496,9550,0.41,ncRNA(MIR779),MIR779
+AT2G24050,9533,0.41,MIF4G domain-containing protein / MA3 domain-containing protein(eIFiso4G2),eIFiso4G2
+AT2G27610,9832,0.41,Tetratricopeptide repeat (TPR)-like superfamily protein(AT2G27610),AT2G27610
+AT2G33220,9550,0.41,GRIM-19 protein(AT2G33220),AT2G33220
+AT2G39130,9855,0.41,Transmembrane amino acid transporter family protein(AT2G39130),AT2G39130
+AT2G43210,9586,0.41,Ubiquitin-like superfamily protein(AT2G43210),AT2G43210
+AT3G01140,9880,0.41,myb domain protein 106(MYB106),MYB106
+AT3G03350,9586,0.41,"NAD(P)-binding Rossmann-fold superfamily protein(AT3G03350)",AT3G03350
+AT3G10940,9526,0.41,dual specificity protein phosphatase (DsPTP1) family protein(LSF2),LSF2
+AT3G16270,9531,0.41,ENTH/VHS family protein(AT3G16270),AT3G16270
+AT3G18620,9584,0.41,DHHC-type zinc finger family protein(AT3G18620),AT3G18620
+AT3G24890,9880,0.41,vesicle-associated membrane protein 728(VAMP728),VAMP728
+AT3G32925,9944,0.41,hypothetical protein(AT3G32925),AT3G32925
+AT3G42622,9832,0.41,hypothetical protein(AT3G42622),AT3G42622
+AT3G43340,9855,0.41,Pseudouridine synthase family protein(AT3G43340),AT3G43340
+AT3G54085,9560,0.41,Yos1-like protein(AT3G54085),AT3G54085
+AT3G59110,9819,0.41,Protein kinase superfamily protein(AT3G59110),AT3G59110
+AT3G59920,9832,0.41,RAB GDP dissociation inhibitor 2(GDI2),GDI2
+AT3G61360,9825,0.41,Tetratricopeptide repeat (TPR)-like superfamily protein(AT3G61360),AT3G61360
+AT4G06748,9586,0.41,miscRNA(AT4G06748),AT4G06748
+AT4G08910,9522,0.41,homeobox protein(AT4G08910),AT4G08910
+AT4G29550,9832,0.41,hypothetical protein (DUF626)(AT4G29550),AT4G29550
+AT4G31408,9832,0.41,ncRNA(AT4G31408),AT4G31408
+AT4G32730,9601,0.41,Homeodomain-like protein(PC-MYB1),PC-MYB1
+AT4G33030,9587,0.41,sulfoquinovosyldiacylglycerol 1(SQD1),SQD1
+AT4G37080,9598,0.41,"ternary complex factor MIP1 leucine-zipper protein (Protein of unknown function, DUF547)(AT4G37080)",AT4G37080
+AT5G03720,9547,0.41,heat shock transcription factor A3(HSFA3),HSFA3
+AT5G05470,6970,0.41,eukaryotic translation initiation factor 2 alpha subunit(EIF2 ALPHA),EIF2 ALPHA
+AT5G14400,9819,0.41,"cytochrome P450, family 724, subfamily A, polypeptide 1(CYP724A1)",CYP724A1
+AT5G18190,9874,0.41,Protein kinase family protein(AT5G18190),AT5G18190
+AT5G18740,9601,0.41,hypothetical protein (DUF3444)(AT5G18740),AT5G18740
+AT5G38460,9526,0.41,"ALG6, ALG8 glycosyltransferase family(AT5G38460)",AT5G38460
+AT5G45860,9944,0.41,PYR1-like 11(PYL11),PYL11
+AT5G50840,9874,0.41,alpha-taxilin-like protein(AT5G50840),AT5G50840
+AT5G64050,9874,0.41,glutamate tRNA synthetase(ERS),ERS
+ATCG00270,9557,0.41,PSBD,PSBD
+AT1G01700,9944,0.4,RHO guanyl-nucleotide exchange factor 2(ROPGEF2),ROPGEF2
+AT1G06980,9845,0.4,"6,7-dimethyl-8-ribityllumazine synthase(AT1G06980)",AT1G06980
+AT1G10240,9518,0.4,FAR1-related sequence 11(FRS11),FRS11
+AT1G11430,9586,0.4,plastid developmental protein DAG(MORF9),MORF9
+AT1G17970,6970,0.4,RING/U-box superfamily protein(AT1G17970),AT1G17970
+AT1G20860,9832,0.4,phosphate transporter 1;8(PHT1;8),PHT1;8
+AT1G23465,9557,0.4,Peptidase S24/S26A/S26B/S26C family protein(AT1G23465),AT1G23465
+AT1G32090,9598,0.4,early-responsive to dehydration stress protein (ERD4)(AT1G32090),AT1G32090
+AT1G37999,9593,0.4,hypothetical protein(AT1G37999),AT1G37999
+AT1G53240,9531,0.4,Lactate/malate dehydrogenase family protein(mMDH1),mMDH1
+AT1G53640,9567,0.4,transmembrane protein(AT1G53640),AT1G53640
+AT1G55200,9526,0.4,kinase with adenine nucleotide alpha hydrolases-like domain-containing protein(AT1G55200),AT1G55200
+AT1G55535,9533,0.4,transmembrane protein(AT1G55535),AT1G55535
+AT1G68820,9601,0.4,Transmembrane Fragile-X-F-associated protein(AT1G68820),AT1G68820
+AT2G07160,9560,0.4,hypothetical protein(AT2G07160),AT2G07160
+AT2G10250,9874,0.4,hypothetical protein(AT2G10250),AT2G10250
+AT2G25870,6970,0.4,haloacid dehalogenase-like hydrolase family protein(AT2G25870),AT2G25870
+AT2G27770,9518,0.4,DUF868 family protein (DUF868)(AT2G27770),AT2G27770
+AT2G31040,9584,0.4,ATP synthase protein I-like protein(AT2G31040),AT2G31040
+AT2G40800,9832,0.4,import inner membrane translocase subunit(AT2G40800),AT2G40800
+AT2G45560,9533,0.4,"cytochrome P450, family 76, subfamily C, polypeptide 1(CYP76C1)",CYP76C1
+AT3G03810,9819,0.4,O-fucosyltransferase family protein(EDA30),EDA30
+AT3G04030,9550,0.4,Homeodomain-like superfamily protein(MYR2),MYR2
+AT3G05850,9587,0.4,MuDR family transposase(MUG7),MUG7
+AT3G10110,9832,0.4,Mitochondrial import inner membrane translocase subunit Tim17/Tim22/Tim23 family protein(MEE67),MEE67
+AT3G19230,9522,0.4,Leucine-rich repeat (LRR) family protein(AT3G19230),AT3G19230
+AT3G21300,9871,0.4,RNA methyltransferase family protein(AT3G21300),AT3G21300
+AT3G43590,9560,0.4,zinc knuckle (CCHC-type) family protein(AT3G43590),AT3G43590
+AT3G46810,9819,0.4,Cysteine/Histidine-rich C1 domain family protein(AT3G46810),AT3G46810
+AT3G47760,6970,0.4,ABC2 homolog 4(ABCA5),ABCA5
+AT3G48820,9547,0.4,Glycosyltransferase family 29 (sialyltransferase) family protein(AT3G48820),AT3G48820
+AT4G15110,9598,0.4,"cytochrome P450, family 97, subfamily B, polypeptide 3(CYP97B3)",CYP97B3
+AT4G26790,9524,0.4,GDSL-like Lipase/Acylhydrolase superfamily protein(AT4G26790),AT4G26790
+AT4G28470,9874,0.4,26S proteasome regulatory subunit S2 1B(RPN1B),RPN1B
+AT4G34740,9547,0.4,GLN phosphoribosyl pyrophosphate amidotransferase 2(ASE2),ASE2
+AT4G35870,9547,0.4,early-responsive to dehydration stress protein (ERD4)(AT4G35870),ERD4
+AT4G37682,9568,0.4,hypothetical protein (DUF1399)(AT4G37682),AT4G37682
+AT4G39120,9584,0.4,inositol monophosphatase family protein(IMPL2),IMPL2
+AT5G15570,9855,0.4,Bromodomain transcription factor(AT5G15570),AT5G15570
+AT5G17700,9819,0.4,MATE efflux family protein(AT5G17700),AT5G17700
+AT5G24010,6970,0.4,Protein kinase superfamily protein(AT5G24010),AT5G24010
+AT5G27845,9526,0.4,hypothetical protein(AT5G27845),AT5G27845
+AT5G35923,9601,0.4,hypothetical protein(AT5G35923),AT5G35923
+AT5G38192,9567,0.4,hypothetical protein(AT5G38192),AT5G38192
+AT5G47445,9522,0.4,hypothetical protein(AT5G47445),AT5G47445
+AT5G61950,9560,0.4,Ubiquitin carboxyl-terminal hydrolase-related protein(AT5G61950),AT5G61950
+AT5G63310,9874,0.4,nucleoside diphosphate kinase 2(NDPK2),NDPK2
+AT5G64830,9526,0.4,programmed cell death 2 C-terminal domain-containing protein(AT5G64830),AT5G64830
+AT5G65880,9547,0.4,transmembrane protein(AT5G65880),AT5G65880
+AT5G65900,9557,0.4,DEA(D/H)-box RNA helicase family protein(AT5G65900),AT5G65900
+ATCG00730,9819,0.4,PETD,PETD
+AT1G02030,9871,-0.4,C2H2-like zinc finger protein(AT1G02030),AT1G02030
+AT1G18890,9560,-0.4,calcium-dependent protein kinase 1(CDPK1),CDPK1
+AT1G21270,9846,-0.4,wall-associated kinase 2(WAK2),WAK2
+AT1G22680,9547,-0.4,hypothetical protein(AT1G22680),AT1G22680
+AT1G22800,9598,-0.4,S-adenosyl-L-methionine-dependent methyltransferases superfamily protein(AT1G22800),AT1G22800
+AT1G23090,9584,-0.4,sulfate transporter 91(AST91),AST91
+AT1G33475,9825,-0.4,SNARE-like superfamily protein(AT1G33475),AT1G33475
+AT1G44810,9560,-0.4,DNA-binding storekeeper protein-related transcriptional regulator(AT1G44810),AT1G44810
+AT1G62300,9568,-0.4,WRKY family transcription factor(WRKY6),WRKY6
+AT1G68280,8357,-0.4,Thioesterase superfamily protein(AT1G68280),AT1G68280
+AT1G72660,9845,-0.4,P-loop containing nucleoside triphosphate hydrolases superfamily protein(AT1G72660),AT1G72660
+AT1G77850,9547,-0.4,auxin response factor 17(ARF17),ARF17
+AT2G17110,9535,-0.4,"DNA-directed RNA polymerase subunit beta, putative (DUF630 and DUF632)(AT2G17110)",AT2G17110
+AT2G23290,9560,-0.4,myb domain protein 70(MYB70),MYB70
+AT2G29400,9550,-0.4,type one protein phosphatase 1(TOPP1),TOPP1
+AT2G32770,9526,-0.4,purple acid phosphatase 13(PAP13),PAP13
+AT2G35680,9518,-0.4,Phosphotyrosine protein phosphatases superfamily protein(AT2G35680),AT2G35680
+AT2G37410,9518,-0.4,translocase inner membrane subunit 17-2(TIM17-2),TIM17-2
+AT2G38610,9568,-0.4,RNA-binding KH domain-containing protein(AT2G38610),AT2G38610
+AT2G46210,9518,-0.4,Fatty acid/sphingolipid desaturase(SLD2),SLD2
+AT2G46260,9535,-0.4,BTB/POZ/Kelch-associated protein(LRB1),LRB1
+AT3G06380,9526,-0.4,tubby-like protein 9(TLP9),TLP9
+AT3G11080,9587,-0.4,receptor like protein 35(RLP35),RLP35
+AT3G12760,9531,-0.4,defective in cullin neddylation protein(AT3G12760),AT3G12760
+AT3G18035,9832,-0.4,winged-helix DNA-binding transcription factor family protein(HON4),HON4
+AT3G18980,9584,-0.4,EIN2 targeting protein1(ETP1),ETP1
+AT3G21360,9522,-0.4,2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein(AT3G21360),AT3G21360
+AT3G23000,6970,-0.4,CBL-interacting protein kinase 7(CIPK7),CIPK7
+AT3G28420,9567,-0.4,Putative membrane lipoprotein(AT3G28420),AT3G28420
+AT3G45700,6970,-0.4,Major facilitator superfamily protein(AT3G45700),AT3G45700
+AT3G48526,9568,-0.4,hypothetical protein(AT3G48526),AT3G48526
+AT3G61450,9944,-0.4,syntaxin of plants 73(SYP73),SYP73
+AT4G04780,9944,-0.4,mediator 21(MED21),MED21
+AT4G11521,9535,-0.4,Receptor-like protein kinase-related family protein(AT4G11521),AT4G11521
+AT4G12180,9874,-0.4,hypothetical protein(AT4G12180),AT4G12180
+AT4G14220,9593,-0.4,RING-H2 group F1A(RHF1A),RHF1A
+AT4G21540,9550,-0.4,sphingosine kinase 1(SPHK1),SPHK1
+AT4G23190,8357,-0.4,cysteine-rich RLK (RECEPTOR-like protein kinase) 11(CRK11),CRK11
+AT4G24540,9874,-0.4,AGAMOUS-like 24(AGL24),AGL24
+AT4G28703,9588,-0.4,RmlC-like cupins superfamily protein(AT4G28703),AT4G28703
+AT5G20350,9526,-0.4,Ankyrin repeat family protein with DHHC zinc finger domain-containing protein(TIP1),TIP1
+AT5G32620,9543,-0.4,hypothetical protein(AT5G32620),AT5G32620
+AT5G34869,9567,-0.4,hypothetical protein(AT5G34869),AT5G34869
+AT5G46871,9825,-0.4,Putative membrane lipoprotein(AT5G46871),AT5G46871
+AT5G47070,9524,-0.4,Protein kinase superfamily protein(AT5G47070),AT5G47070
+AT5G56960,9825,-0.4,basic helix-loop-helix (bHLH) DNA-binding family protein(AT5G56960),AT5G56960
+AT5G60160,9846,-0.4,Zn-dependent exopeptidases superfamily protein(AT5G60160),AT5G60160
+AT1G04870,9874,-0.41,protein arginine methyltransferase 10(PRMT10),PRMT10
+AT1G10610,9524,-0.41,basic helix-loop-helix (bHLH) DNA-binding superfamily protein(AT1G10610),AT1G10610
+AT1G14260,9584,-0.41,RING/FYVE/PHD zinc finger superfamily protein(AT1G14260),AT1G14260
+AT1G17160,9832,-0.41,pfkB-like carbohydrate kinase family protein(AT1G17160),AT1G17160
+AT1G32700,8357,-0.41,PLATZ transcription factor family protein(AT1G32700),AT1G32700
+AT1G65300,9874,-0.41,AGAMOUS-like 38(AGL38),AGL38
+AT1G80180,9855,-0.41,hypothetical protein(AT1G80180),AT1G80180
+AT2G18660,9568,-0.41,plant natriuretic peptide A(PNP-A),PNP-A
+AT2G22120,9567,-0.41,RING/FYVE/PHD zinc finger superfamily protein(AT2G22120),AT2G22120
+AT2G24570,9598,-0.41,WRKY DNA-binding protein 17(WRKY17),WRKY17
+AT2G26380,9584,-0.41,Leucine-rich repeat (LRR) family protein(AT2G26380),AT2G26380
+AT2G37110,9535,-0.41,PLAC8 family protein(AT2G37110),AT2G37110
+AT2G41090,9601,-0.41,Calcium-binding EF-hand family protein(AT2G41090),AT2G41090
+AT2G43930,9598,-0.41,Protein kinase superfamily protein(AT2G43930),AT2G43930
+AT3G01340,9587,-0.41,Transducin/WD40 repeat-like superfamily protein(AT3G01340),AT3G01340
+AT3G12360,9522,-0.41,Ankyrin repeat family protein(ITN1),ITN1
+AT3G45610,9845,-0.41,Dof-type zinc finger DNA-binding family protein(DOF6),DOF6
+AT3G60700,9845,-0.41,hypothetical protein (DUF1163)(AT3G60700),AT3G60700
+AT3G62480,9844,-0.41,hypothetical protein(AT3G62480),AT3G62480
+AT4G13560,9593,-0.41,Late embryogenesis abundant protein (LEA) family protein(UNE15),UNE15
+AT4G15260,9524,-0.41,UDP-Glycosyltransferase superfamily protein(AT4G15260),AT4G15260
+AT4G29305,9522,-0.41,low-molecular-weight cysteine-rich 25(LCR25),LCR25
+AT4G31080,9846,-0.41,integral membrane metal-binding family protein (DUF2296)(AT4G31080),AT4G31080
+AT4G32880,9518,-0.41,homeobox-leucine zipper protein ATHB-8(HB-8),HB-8
+AT5G08535,9568,-0.41,D111/G-patch domain-containing protein(AT5G08535),AT5G08535
+AT5G24110,9547,-0.41,WRKY DNA-binding protein 30(WRKY30),WRKY30
+AT5G56810,9550,-0.41,F-box/RNI-like/FBD-like domains-containing protein(AT5G56810),AT5G56810
+AT5G59220,9526,-0.41,PP2C protein (Clade A protein phosphatases type 2C)(HAI1),HAI1
+AT5G60180,9871,-0.41,pumilio 19(PUM19),PUM19
+AT5G67410,9871,-0.41,"transcriptional regulator of RNA polII, SAGA, subunit(AT5G67410)",AT5G67410
+AT1G02410,9944,-0.42,cytochrome c oxidase assembly protein CtaG / Cox11 family(AT1G02410),AT1G02410
+AT1G08940,9550,-0.42,Phosphoglycerate mutase family protein(AT1G08940),AT1G08940
+AT1G12400,9543,-0.42,"Nucleotide excision repair, TFIIH, subunit TTDA(AT1G12400)",AT1G12400
+AT1G15020,9855,-0.42,quiescin-sulfhydryl oxidase 1(QSOX1),QSOX1
+AT1G19380,9844,-0.42,"sugar, putative (DUF1195)(AT1G19380)",AT1G19380
+AT1G23830,9944,-0.42,transmembrane protein(AT1G23830),AT1G23830
+AT1G29965,9547,-0.42,Ribosomal protein L18ae/LX family protein(AT1G29965),AT1G29965
+AT1G43900,9567,-0.42,Protein phosphatase 2C family protein(AT1G43900),AT1G43900
+AT1G49005,9588,-0.42,CLAVATA3/ESR-RELATED 11(CLE11),CLE11
+AT1G64280,9944,-0.42,regulatory protein (NPR1)(NPR1),NPR1
+AT1G66680,9557,-0.42,S-adenosyl-L-methionine-dependent methyltransferases superfamily protein(AR401),AR401
+AT1G76830,9587,-0.42,F-box and associated interaction domains-containing protein(AT1G76830),AT1G76830
+AT2G18690,9586,-0.42,transmembrane protein(AT2G18690),AT2G18690
+AT2G22790,8357,-0.42,hypothetical protein(AT2G22790),AT2G22790
+AT2G36650,9855,-0.42,CHUP1-like protein(AT2G36650),AT2G36650
+AT3G21960,9587,-0.42,Receptor-like protein kinase-related family protein(AT3G21960),AT3G21960
+AT3G23240,9819,-0.42,ethylene response factor 1(ERF1),ERF1
+AT3G29240,9819,-0.42,PPR containing protein (DUF179)(AT3G29240),AT3G29240
+AT3G52105,9526,-0.42,DIS3-exonuclease-like protein(AT3G52105),AT3G52105
+AT3G53950,9944,-0.42,glyoxal oxidase-related protein(AT3G53950),AT3G53950
+AT3G60670,9825,-0.42,PLATZ transcription factor family protein(AT3G60670),AT3G60670
+AT4G27350,9593,-0.42,"membrane lipoprotein lipid attachment site-like protein, putative (DUF1223)(AT4G27350)",AT4G27350
+AT5G03260,9846,-0.42,laccase 11(LAC11),LAC11
+AT5G16800,9543,-0.42,Acyl-CoA N-acyltransferases (NAT) superfamily protein(AT5G16800),AT5G16800
+AT5G16880,9586,-0.42,Target of Myb protein 1(AT5G16880),AT5G16880
+AT5G18470,9846,-0.42,Curculin-like (mannose-binding) lectin family protein(AT5G18470),AT5G18470
+AT5G19260,9526,-0.42,FANTASTIC four-like protein (DUF3049)(FAF3),FAF3
+AT5G26731,9584,-0.42,hypothetical protein(AT5G26731),AT5G26731
+AT5G47320,9844,-0.42,ribosomal protein S19(RPS19),RPS19
+AT5G53550,9944,-0.42,YELLOW STRIPE like 3(YSL3),YSL3
+AT5G60910,9845,-0.42,AGAMOUS-like 8(AGL8),AGL8
+AT1G12580,9832,-0.43,phosphoenolpyruvate carboxylase-related kinase 1(PEPKR1),PEPKR1
+AT1G16250,9547,-0.43,Galactose oxidase/kelch repeat superfamily protein(AT1G16250),AT1G16250
+AT1G27580,9543,-0.43,F-box protein (DUF295)(AT1G27580),AT1G27580
+AT1G47655,9533,-0.43,Dof-type zinc finger DNA-binding family protein(AT1G47655),AT1G47655
+AT1G56120,9846,-0.43,Leucine-rich repeat transmembrane protein kinase(AT1G56120),AT1G56120
+AT1G79075,9846,-0.43,ncRNA(AT1G79075),AT1G79075
+AT2G24360,9524,-0.43,Protein kinase superfamily protein(AT2G24360),AT2G24360
+AT2G32930,9598,-0.43,zinc finger nuclease 2(ZFN2),ZFN2
+AT2G34850,9846,-0.43,"NAD(P)-binding Rossmann-fold superfamily protein(MEE25)",MEE25
+AT2G39760,9601,-0.43,BTB/POZ/MATH-domains containing protein(BPM3),BPM3
+AT2G45580,9543,-0.43,"cytochrome P450, family 76, subfamily C, polypeptide 3(CYP76C3)",CYP76C3
+AT3G45440,9601,-0.43,Concanavalin A-like lectin protein kinase family protein(AT3G45440),AT3G45440
+AT3G47830,9533,-0.43,DNA glycosylase superfamily protein(AT3G47830),AT3G47830
+AT4G09460,9522,-0.43,myb domain protein 6(MYB6),MYB6
+AT4G11300,9601,-0.43,"ROH1, putative (DUF793)(AT4G11300)",AT4G11300
+AT4G30920,9547,-0.43,Cytosol aminopeptidase family protein(LAP2),LAP2
+AT5G13820,9518,-0.43,telomeric DNA binding protein 1(TBP1),TBP1
+AT5G22870,6970,-0.43,Late embryogenesis abundant (LEA) hydroxyproline-rich glycoprotein family(AT5G22870),AT5G22870
+AT5G34940,9586,-0.43,glucuronidase 3(GUS3),GUS3
+AT5G37720,9567,-0.43,ALWAYS EARLY 4(ALY4),ALY4
+AT5G44568,9526,-0.43,transmembrane protein(AT5G44568),AT5G44568
+AT5G61060,9531,-0.43,histone deacetylase 5(HDA05),HDA05
+AT1G02930,9567,-0.44,glutathione S-transferase 6(GSTF6),GSTF6
+AT1G07570,9584,-0.44,Protein kinase superfamily protein(APK1A),APK1A
+AT1G22480,9845,-0.44,Cupredoxin superfamily protein(AT1G22480),AT1G22480
+AT1G66460,9874,-0.44,Protein kinase superfamily protein(AT1G66460),AT1G66460
+AT2G02955,9944,-0.44,maternal effect embryo arrest 12(MEE12),MEE12
+AT2G24790,9550,-0.44,CONSTANS-like 3(COL3),COL3
+AT2G26210,9874,-0.44,Ankyrin repeat family protein(AT2G26210),AT2G26210
+AT2G43620,9832,-0.44,Chitinase family protein(AT2G43620),AT2G43620
+AT2G44070,9518,-0.44,NagB/RpiA/CoA transferase-like superfamily protein(AT2G44070),AT2G44070
+AT3G06260,9855,-0.44,galacturonosyltransferase-like 4(GATL4),GATL4
+AT3G14750,9825,-0.44,structural maintenance of chromosomes domain protein(AT3G14750),AT3G14750
+AT3G15760,9845,-0.44,cytochrome P450 family protein(AT3G15760),AT3G15760
+AT4G08290,9844,-0.44,nodulin MtN21 /EamA-like transporter family protein(UMAMIT20),UMAMIT20
+AT4G22980,9588,-0.44,molybdenum cofactor sulfurase-like protein(AT4G22980),AT4G22980
+AT4G23280,9560,-0.44,cysteine-rich RLK (RECEPTOR-like protein kinase) 20(CRK20),CRK20
+AT5G41740,9944,-0.44,Disease resistance protein (TIR-NBS-LRR class) family(AT5G41740),AT5G41740
+AT5G67520,9535,-0.44,adenosine-5'-phosphosulfate (APS) kinase 4(APK4),APK4
+AT1G05840,9825,-0.45,Eukaryotic aspartyl protease family protein(AT1G05840),AT1G05840
+AT1G18450,9533,-0.45,actin-related protein 4(ARP4),ARP4
+AT1G23840,6970,-0.45,transmembrane protein(AT1G23840),AT1G23840
+AT1G23850,8357,-0.45,transmembrane protein(AT1G23850),AT1G23850
+AT2G03550,9550,-0.45,alpha/beta-Hydrolases superfamily protein(AT2G03550),AT2G03550
+AT2G18480,6970,-0.45,Major facilitator superfamily protein(AT2G18480),AT2G18480
+AT2G39210,8357,-0.45,Major facilitator superfamily protein(AT2G39210),AT2G39210
+AT2G46270,9543,-0.45,G-box binding factor 3(GBF3),GBF3
+AT3G01990,9568,-0.45,ACT domain repeat 6(ACR6),ACR6
+AT3G09830,9874,-0.45,Protein kinase superfamily protein(AT3G09830),AT3G09830
+AT3G17600,9568,-0.45,indole-3-acetic acid inducible 31(IAA31),IAA31
+AT3G46110,9944,-0.45,UPSTREAM OF FLC-like protein (DUF966)(AT3G46110),AT3G46110
+AT4G05018,9832,-0.45,transmembrane protein(AT4G05018),AT4G05018
+AT4G18890,9874,-0.45,BES1/BZR1 homolog 3(BEH3),BEH3
+AT4G28260,9547,-0.45,acyl-UDP-N-acetylglucosamine O-acyltransferase(AT4G28260),AT4G28260
+AT5G05965,9550,-0.45,cell wall RBR3-like protein(AT5G05965),AT5G05965
+AT5G18110,9825,-0.45,Putative cap-binding protein(NCBP),NCBP
+AT5G18250,9522,-0.45,transmembrane protein(AT5G18250),AT5G18250
+AT5G24430,9560,-0.45,Calcium-dependent protein kinase (CDPK) family protein(AT5G24430),AT5G24430
+AT5G47150,9557,-0.45,YDG/SRA domain-containing protein(AT5G47150),AT5G47150
+AT1G61065,9531,-0.46,"1,3-beta-glucan synthase component (DUF1218)(AT1G61065)",AT1G61065
+AT2G01600,9825,-0.46,ENTH/ANTH/VHS superfamily protein(AT2G01600),AT2G01600
+AT2G16595,9880,-0.46,"Translocon-associated protein (TRAP), alpha subunit(AT2G16595)",AT2G16595
+AT2G32710,9905,-0.46,Cyclin-dependent kinase inhibitor family protein(AT2G32710),AT2G32710
+AT2G44170,9550,-0.46,miscRNA(NMT2),NMT2
+AT3G10815,9846,-0.46,RING/U-box superfamily protein(AT3G10815),AT3G10815
+AT3G43825,9846,-0.46,hypothetical protein(AT3G43825),AT3G43825
+AT4G28706,9593,-0.46,pfkB-like carbohydrate kinase family protein(AT4G28706),AT4G28706
+AT5G14140,6970,-0.46,nucleic acid binding / zinc ion binding protein(AT5G14140),AT5G14140
+AT5G44575,9547,-0.46,hypothetical protein(AT5G44575),AT5G44575
+AT5G52250,9584,-0.46,Transducin/WD40 repeat-like superfamily protein(RUP1),RUP1
+AT5G59150,9905,-0.46,RAB GTPase homolog A2D(RABA2D),RABA2D
+AT1G01990,9844,-0.47,hypothetical protein(AT1G01990),AT1G01990
+AT1G50830,6970,-0.47,"Aminotransferase-like, plant mobile domain family protein(AT1G50830)",AT1G50830
+AT1G63180,9905,-0.47,UDP-D-glucose/UDP-D-galactose 4-epimerase 3(UGE3),UGE3
+AT4G03940,6970,-0.47,transmembrane protein(AT4G03940),AT4G03940
+AT4G16000,9567,-0.47,hypothetical protein(AT4G16000),AT4G16000
+AT4G19530,9598,-0.47,disease resistance protein (TIR-NBS-LRR class) family(AT4G19530),AT4G19530
+AT5G04760,6970,-0.47,Duplicated homeodomain-like superfamily protein(AT5G04760),AT5G04760
+AT5G23780,9560,-0.47,agenet domain protein (DOMAIN OF UNKNOWN FUNCTION 724 9)(DUF9),AT5G23780
+AT5G24890,9586,-0.47,stress response NST1-like protein(AT5G24890),AT5G24890
+AT5G67250,9560,-0.47,SKP1/ASK1-interacting protein 2(SKIP2),SKIP2
+AT1G47056,9855,-0.48,VIER F-box protein 1(VFB1),VFB1
+AT1G75470,9944,-0.48,purine permease(PUP15),PUP15
+AT2G26240,8357,-0.48,Transmembrane proteins 14C(AT2G26240),AT2G26240
+AT2G33900,9547,-0.48,tRNA(AT2G33900),AT2G33900
+AT3G12300,9905,-0.48,cilia/flagella-associated protein(BUG22),BUG22
+AT3G12950,9825,-0.48,Trypsin family protein(AT3G12950),AT3G12950
+AT4G14690,9522,-0.48,Chlorophyll A-B binding family protein(ELIP2),ELIP2
+AT4G32040,9593,-0.48,homeobox protein knotted-1-like 5(KNAT5),KNAT5
+AT5G12180,9587,-0.48,calcium-dependent protein kinase 17(CPK17),CPK17
+AT5G18170,9855,-0.48,glutamate dehydrogenase 1(GDH1),GDH1
+AT5G18610,9535,-0.48,Protein kinase superfamily protein(AT5G18610),AT5G18610
+AT1G11185,9845,-0.49,ncRNA(AT1G11185),AT1G11185
+AT1G12390,9535,-0.49,Cornichon family protein(AT1G12390),AT1G12390
+AT1G33770,9557,-0.49,Protein kinase superfamily protein(AT1G33770),AT1G33770
+AT2G16900,9819,-0.49,phospholipase-like protein (PEARLI 4) family protein(AT2G16900),AT2G16900
+AT2G35170,9819,-0.49,Histone H3 K4-specific methyltransferase SET7/9 family protein(AT2G35170),AT2G35170
+AT3G53810,9598,-0.49,Concanavalin A-like lectin protein kinase family protein(AT3G53810),AT3G53810
+AT3G61410,9855,-0.49,U-box kinase family protein(AT3G61410),AT3G61410
+AT4G23310,9584,-0.49,cysteine-rich RLK (RECEPTOR-like protein kinase) 23(CRK23),CRK23
+AT4G24630,9526,-0.49,DHHC-type zinc finger family protein(AT4G24630),AT4G24630
+AT4G32870,8357,-0.49,Polyketide cyclase/dehydrase and lipid transport superfamily protein(AT4G32870),AT4G32870
+AT5G11860,9845,-0.49,SCP1-like small phosphatase 5(SSP5),SSP5
+AT5G12270,9855,-0.49,2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein(AT5G12270),AT5G12270
+AT5G26642,9526,-0.49,hypothetical protein(AT5G26642),AT5G26642
+AT2G23190,9535,-0.5,"cytochrome P450, family 81, subfamily D, polypeptide 7(CYP81D7)",CYP81D7
+AT3G01175,8357,-0.5,transmembrane protein(AT3G01175),AT3G01175
+AT4G33620,9526,-0.5,Cysteine proteinases superfamily protein(AT4G33620),AT4G33620
+AT4G39230,9845,-0.5,NmrA-like negative transcriptional regulator family protein(AT4G39230),AT4G39230
+AT4G08460,9531,-0.51,hypothetical protein (DUF1644)(AT4G08460),AT4G08460
+AT4G14410,9543,-0.51,basic helix-loop-helix (bHLH) DNA-binding superfamily protein(bHLH104),bHLH104
+AT4G34460,9598,-0.52,GTP binding protein beta 1(AGB1),AGB1
+AT5G19930,6970,-0.52,"integral membrane protein (Protein of unknown function DUF92, transmembrane)(AT5G19930)",AT5G19930
+AT2G26355,9560,-0.53,ncRNA(AT2G26355),AT2G26355
+AT2G41690,9547,-0.53,heat shock transcription factor B3(HSFB3),HSFB3
+AT2G45980,9584,-0.53,mesoderm induction early response protein(ATI1),ATI1
+AT3G50470,9825,-0.53,homolog of RPW8 3(HR3),HR3
+AT3G60920,9557,-0.53,beige/BEACH domain protein(AT3G60920),AT3G60920
+AT1G24735,9526,-0.54,S-adenosyl-L-methionine-dependent methyltransferases superfamily protein(AT1G24735),AT1G24735
+AT4G30570,9550,-0.54,Glucose-1-phosphate adenylyltransferase family protein(AT4G30570),AT4G30570
+AT1G75130,9880,-0.56,"cytochrome P450, family 721, subfamily A, polypeptide 1(CYP721A1)",CYP721A1
+AT1G02100,9518,-0.57,Leucine carboxyl methyltransferase(SBI1),SBI1
+AT1G49000,9587,-0.58,transmembrane protein(AT1G49000),AT1G49000
+AT4G02520,9593,-0.58,glutathione S-transferase PHI 2(GSTF2),GSTF2
+AT4G02460,9560,-0.59,DNA mismatch repair protein(PMS1),PMS1
