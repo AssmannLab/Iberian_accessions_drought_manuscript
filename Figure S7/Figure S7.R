@@ -1,0 +1,274 @@
+#READ TWO FILES
+library(tidyverse)
+library(dplyr)
+library(readr)
+library(MASS)
+library(ggplot2)
+library(viridis)
+library(ggrepel)
+library(Hmisc)
+library(ggpmisc)
+library(qvalue)
+library(ggpubr)
+library(cowplot)
+library(patchwork)
+library(magick)
+library(png)
+library(grid)
+library(ggpmisc)
+###################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+
+
+
+####Create an annotation file compatible with the files we are creating.
+annotation = read_csv("data/annotation_GWAS.csv")
+
+head(annotation)
+
+df1a=read_csv("data/GWAS/GWAS_d13C_Spain_LM.csv")
+df1a <- df1a[df1a$maf > 0.1, ]
+df1a <- merge(df1a,annotation,by=c("chr", "pos"))
+head(df1a)
+
+df1b=read_csv("data/GWAS/iWUE_LM.csv")
+df1b <- df1b[df1b$maf > 0.1, ]
+df1b <- merge(df1b,annotation,by=c("chr", "pos"))
+head(df1b)
+
+head(df1)
+df1 <- merge(df1a,df1b,by=c("chr", "pos"))
+head(df1)
+nrow(df1)
+
+df1<-df1 %>% unite(annotation, symbol.y, pos, sep = " pos. ")
+df1 <- df1[order(df1$score.x) ,  ]
+head(df1)
+
+
+df1$GVE.x <- NULL
+df1$gene.x <- NULL
+df1$INFO.x <- NULL
+df1$annotation.x <- NULL
+df1$Gene_id.x <- NULL
+df1$GVE.y <- NULL
+df1$GVE.y <- NULL
+df1$Iberian_score.d13C <- df1$score.x
+df1$Our_sample_score.d13C <- df1$score.y
+
+head(df1)
+
+write.csv(df1, "/Tables/GWAS_d13C.csv", row.names = FALSE)
+df1 <- df1[order(-df1$score.x) ,  ]
+
+formula <- y ~ x
+
+# Bin size control + color palette
+p1 <- ggplot(df1, aes(x=Iberian_score.d13C, y=Our_sample_score.d13C) ) +
+  geom_hex(bins = 50,aes(fill = stat(log(count))))+
+  scale_fill_continuous(type = "viridis") +
+  geom_smooth(method = "lm", se = T, fill="black", colour="#696969", size=0.7, alpha = 0.1) + stat_poly_eq(aes(label = paste(..eq.label.., ..rr.label..,  sep = "~~~")), 
+                                                                                                           label.x.npc = "left", label.y.npc = "top",
+                                                                                                           formula = formula, parse = TRUE, size = 5, colour="black") +
+  scale_color_viridis()+
+  geom_vline(xintercept = 4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 4, color = "black", linetype = "dashed")+
+  theme(axis.title = element_text(family = "Arial", color="black", face="bold", size=17)) +  
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(axis.text = element_text(family = "Arial", color="black",  face="bold",size=16)) +
+  theme(plot.title = element_text(family = "Arial", color="#696969", face="bold",size=28)) +  theme(panel.background = element_rect(fill = 'white')) +
+  ggtitle("GWAS")+
+  #theme(legend.position="none") + 
+  ylab(expression(bold(atop(paste("Our sample: Iberian intrinsic water use efficiency"," (\u03B4"^"13", "C)"), paste("Genome-wide" ~ association ~ (-log["10"] ~ bolditalic("P")))))))+ 
+  xlab(expression(bold(atop(paste("Iberian intrinsic water use efficiency"," (\u03B4"^"13", "C)"), paste("Genome-wide" ~ association ~ (-log["10"] ~ bolditalic("P")))))))+ 
+  scale_x_continuous(limits = c(0, 8), breaks = seq(0, 8, by = 2))+
+  scale_y_continuous(limits = c(0, 8), breaks = seq(0, 8, by = 2))
+
+p1
+
+ 
+png("panels/p1.png", width = 7, height = 7, units = 'in', res = 350)
+p1
+dev.off() 
+
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+#######################################################################################################################################
+
+####Create an annotation file compatible with the files we are creating.
+annotation = read_csv("data/gene_description.csv")
+head(annotation)
+
+###Open dataframe with phenotypes
+
+
+
+##res<-rcorr(as.matrix(phenotypes))
+##AA<-signif(res$r, 2)
+##write.csv(AA, "/Users/angel_admin/Box/Assmann_Lab/2_Researcher_Data/1_Current/Angel_Ferrero-Serrano/Spanish accessions/Fig28_transcriptome_potentialvsstability/Iberian_PxExP_corr.csv")
+
+library(dplyr) 
+#####Run autocorrelation matrix Phenotype A
+phenotypes = read_csv("data/Iberian_d13C.csv")
+head(phenotypes)
+phenotypesselected <- dplyr::select(phenotypes, Dittberner_moleco18_Delta_13C)
+accession_id1<-phenotypes$accession_id
+selected <-cbind(accession_id1, phenotypesselected)
+head(selected)
+transposedfinal = read_csv("data/transposedfinal.csv")
+head(transposedfinal)
+colnames(transposedfinal)[colnames(transposedfinal)=="accession_id"] <- "accession_id1"
+final<-merge(selected, transposedfinal, by = "accession_id1", sort = TRUE)
+head(final)
+accession_idsorted<-final$accession_id1
+final$accession_id1 <- NULL
+res<-rcorr(as.matrix(final), type = c("pearson","spearman"))
+AA<-signif(res$r, 2)
+BB<-signif(res$P,2)
+outputB <-cbind(accession_idsorted,AA)
+outputB <- outputB[-1, 1:2]
+outputB <- as.data.frame(outputB)
+outputB <- outputB %>% 
+  rownames_to_column(var = "gene")
+outputB <- outputB[order(-outputB$Dittberner_moleco18_Delta_13C) ,  ]
+head(outputB)
+outputB <- merge(outputB,annotation,by="gene")
+outputB <- outputB %>% 
+  rename(
+    Dittberner_moleco18_Delta_13C_rs = Dittberner_moleco18_Delta_13C)
+outputB$accession_idsorted.x <- NULL
+outputB$accession_idsorted.y <- NULL
+outputB <- outputB[order(-outputB$Dittberner_moleco18_Delta_13C_rs) ,  ]
+head(outputB, n=100)
+tail(outputB, n=50)
+head(outputB)
+write.csv(outputB, "Tables/TWAS_Iberian_Dittberner_moleco18_Delta_13C.csv", row.names = FALSE)
+
+head(outputB)
+
+
+
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+
+
+annotation = read_csv("data/gene_description.csv")
+head(annotation)
+phenotypes = read_csv("data/Phenotypesb.csv")
+head(phenotypes)
+#####Run autocorrelation matrix
+head(phenotypes)
+selected <- dplyr::select(phenotypes,accession_id, iWUE)
+head(selected)
+transposedfinal = read_csv("data/transposedfinal.csv")
+head(transposedfinal)
+final<-merge(selected, transposedfinal, by = "accession_id", sort = TRUE)
+head(final)
+accession_idsorted<-final$accession_id1
+final$accession_id1 <- NULL
+res<-rcorr(as.matrix(final), type = c("pearson","spearman"))
+AA<-signif(res$r, 2)
+BB<-signif(res$P,2)
+outputA <-cbind(accession_idsorted,AA)
+outputA <- outputA[-1, 1:2]
+outputA <- as.data.frame(outputA)
+outputA <- outputA %>% 
+  rownames_to_column(var = "gene")
+
+outputA <- outputA[order(-outputA$iWUE) ,  ]
+head(outputA)
+outputA <- merge(outputA,annotation,by="gene")
+outputA <- outputA %>% 
+  rename(
+    Our_sample_iWUE_rs = iWUE)
+
+outputA <- outputA[order(-outputA$Our_sample_iWUE_rs) ,  ]
+head(outputA, n=100)
+tail(outputA, n=50)
+head(outputA)
+write.csv(outputA, "Tables/TWAS_Our_sample_iWUE.csv", row.names = FALSE)
+
+
+
+#####Merge df3
+
+df2 <- merge(outputB,outputA,by="gene")
+nrow(df2)
+head(df2)
+df2[df2 == "NAN"] <- NA
+df2[complete.cases(df2),]
+
+df2$accession_idsorted.y <- NULL
+df2$annotation.x <- NULL
+df2$accession_idsorted.x <- NULL
+df2$Gene_id.x <- NULL
+df2$symbol.x <- NULL
+
+head(df2)
+df2 <- df2 %>% 
+  rename(
+    symbol = symbol.y,
+    annotation = annotation.y)
+head(df2)
+
+formula <- y ~ x
+p2 <- ggplot(df2, aes(x=Dittberner_moleco18_Delta_13C_rs, y=Our_sample_iWUE_rs) ) +
+  geom_hex(bins = 50,aes(fill = stat(log(count))))+
+  scale_fill_continuous(type = "viridis") +
+  geom_smooth(method = "lm", se = T, fill="black", colour="#696969", size=0.7, alpha = 0.1) + stat_poly_eq(aes(label = paste(..eq.label.., ..rr.label..,  sep = "~~~")), 
+                                                                                                           label.x.npc = "right", label.y.npc = "bottom",
+                                                                                                           formula = formula, parse = TRUE, size = 5, colour="black") +
+  scale_color_viridis()+
+  geom_vline(xintercept = 0.4, color = "black", linetype = "dashed")+
+  geom_vline(xintercept = -0.4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = 0.4, color = "black", linetype = "dashed")+
+  geom_hline(yintercept = -0.4, color = "black", linetype = "dashed")+
+  theme(axis.title = element_text(family = "Arial", color="black", face="bold", size=17)) +  
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=1), panel.background = element_blank(), axis.ticks.length=unit(0.3,"cm"))  +
+  theme(axis.text = element_text(family = "Arial", color="black",  face="bold",size=16)) +
+  theme(plot.title = element_text(family = "Arial", color="#696969", face="bold",size=28)) +  theme(panel.background = element_rect(fill = 'white')) +
+  ggtitle("TWAS")+
+ # theme(legend.position="none") + 
+  ylab(expression(bold(atop(paste("Our sample: Iberian intrinsic water use efficiency (\u03B4"^"13", "C)"), paste("transcriptome-wide association ", (r[s]))))))+ 
+  xlab(expression(bold(atop(paste("Iberian intrinsic water use efficiency (\u03B4"^"13", "C)"), paste("transcriptome-wide association ", (r[s]))))))+ 
+  ggtitle("TWAS")+
+  scale_y_continuous(limits = c(-0.8, 0.8), breaks = seq(-0.8, 0.8, by = 0.4))+  scale_x_continuous(limits = c(-0.8, 0.8), breaks = seq(-0.8, 0.8, by = 0.4))
+
+
+p2 
+png("panels/p2.png", width = 7, height = 7, units = 'in', res = 350)
+p2
+dev.off() 
+####################################################################################################################################################
+####################
+
+
+M1 <- image_read("panels/p1.png")
+M2 <- image_read("panels/p2.png")
+
+
+plot_grid(rasterGrob(M1),rasterGrob(M2),labels=c('a', 'b'), greedy = TRUE, ncol =2, nrow = 1, align = 'v', hjust=0, label_size=45)
+png("Fig.7.png", width = 14, height = 6, units = 'in', res = 350)
+plot_grid(rasterGrob(M1),rasterGrob(M2),labels=c('a', 'b'), greedy = TRUE, ncol =2, nrow = 1, align = 'v', hjust=0, label_size=45)
+dev.off()
